@@ -12,7 +12,7 @@ use Think\Controller;
 class FormController extends Controller
 {
     public function insert(){
-        $Form   =   D('Form');
+        $Form   =   D('form');
         if($Form->create()) {
             $result =   $Form->add();
             if($result) {
@@ -21,7 +21,8 @@ class FormController extends Controller
                 $this->error('数据添加错误！');
             }
         }else{
-            $this->error($Form->getError());
+           // $this->error($Form->getError());
+            $Form->getLastSql();
         }
     }
 }

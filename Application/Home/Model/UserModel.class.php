@@ -17,16 +17,11 @@ class UserModel extends Model
 
 
     public function add(){
-//        $data['email'] = I('post.email');
-//        $data['password'] = I('post.password');
-//        $data['nickname'] = I('post.nickname');
-//        $data['username'] = I('post.username');
-        $data = I('post.');
-        $result = $this->save($data);
-        if(false !== $result){
-            return new MessageInfo(true,null, '增加成功');
-        }else{
-            return new MessageInfo(true,'程序错误','程序错误');
-        }
+        $User = M('User');
+// 根据表单提交的POST数据创建数据对象
+        $User->create();
+        $result1 =   $User->add();
+        $result['state']=false;
+        $result['message']=$User->getError();
     }
 }

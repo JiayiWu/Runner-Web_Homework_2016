@@ -15,8 +15,10 @@ class UserController extends Controller
 
     public function userAdd(){
      $um = new um();
+
      $result = $um->add();
         $this->ajaxReturn($result,"JSON");
+
     }
 
     public function testA(){
