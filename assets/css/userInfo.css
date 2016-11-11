@@ -1,0 +1,36 @@
+/**
+    * Created by Jiayiwu on 16/10/19.
+    * Mail:wujiayi@lgdreamer.com
+    * Change everywhere
+    */
+
+
+.container .row .input-group{
+    width: 80%;
+    margin: 15px auto;
+}
+
+.container .row #button-group{
+    overflow: hidden;
+    margin: 10px auto;
+    text-align: center;
+    vertical-align:middle;
+}
+.container .row #content{
+ margin-top: 20px;
+    margin-bottom: 0px;
+
+}
+.container .row #button-group button{
+    width: 40%;
+    margin-top: 60px;
+    display: inline-block;
+
+}
+
+/*.container .row #button-group #create-cancle{*/
+    /*width: 40%;*/
+    /*margin-top: 0px;*/
+    /*display: inline-block;*/
+
+/*}*/

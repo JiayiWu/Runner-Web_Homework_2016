@@ -1,0 +1,72 @@
+/**
+    * Created by Jiayiwu on 16/10/14.
+    * Mail:wujiayi@lgdreamer.com
+    * Change everywhere
+    */
+
+
+.container{
+    width: 100%;
+
+}
+
+.container #f-row{
+    min-height:500px;
+}
+
+
+
+.container .row #create-com{
+    float: right;
+}
+
+.container .row .gallery-node{
+    margin-top: 20px;
+
+    text-align: center;
+
+}
+
+.container .row .report-img{
+margin: 0px;
+   width: 5%;
+ position: absolute;
+    bottom: 10px;
+    right: 10px;
+
+
+}
+
+
+.container .row .gallery-node .thumbnail{
+
+    position: relative;
+
+}
+
+.container .row .gallery-node .button-base{
+
+   width: 60%;
+
+}
+
+.container .row .gallery-node .modify-base{
+
+    width: 30%;
+
+}
+
+.container .row  #loading{
+    -webkit-border-radius: 15px;
+    border-radius: 15px;
+    margin-left: 30px;
+    overflow: hidden;
+    background-color: #f5f5f5;
+    margin-top: 20px;
+    padding-top: 5px;
+    padding-right: 20px;
+    height: auto;
+    padding-bottom: 5px;
+    text-align: center;
+
+}

@@ -1,0 +1,135 @@
+/**
+    * Created by Jiayiwu on 16/10/15.
+    * Mail:wujiayi@lgdreamer.com
+    * Change everywhere
+    */
+
+.container{
+    width: 100%;
+
+}
+
+.container .row #nav-base{
+    margin-bottom: 20px;
+}
+
+
+.container .row #record{
+    position: relative;
+}
+
+.container .row #record #BMI{
+    position: absolute;
+    width:80px;
+    bottom: 260px;
+    left: 55px;
+    font-size: 55px;
+    font-weight: 500;
+}
+
+
+.container .row #record #height{
+    position: absolute;
+    width:80px;
+    bottom: 155px;
+    left: 130px;
+}
+
+.container .row #record #weight{
+    position: absolute;
+    width:80px;
+    bottom: 195px;
+    left: 130px;
+}
+
+.container .row #record #weight_cal{
+    position: absolute;
+    bottom: 40px;
+    left: 190px;
+    font-size: 35px;
+}
+
+.container .row #record #calorie_cal{
+    position: absolute;
+    bottom: 40px;
+    left: 445px;
+    font-size: 35px;
+}
+
+.container .row #record #cal{
+    position: absolute;
+    bottom: 175px;
+    left: 250px;
+    background-color: #80a63a;
+    border:1px solid #80a63a;"
+}
+
+.container .row .basediv p{
+   margin: 0;
+   font-size: 25px;
+}
+
+.container .row .basediv img{
+    z-index: -1;
+    width: 100%;
+}
+
+.container .row #chart_bac{
+    /*overflow: hidden;*/
+    background-color: #ffffff;
+    /*height: 550px;*/
+}
+
+.container .row #chart{
+
+    height: 550px;
+}
+
+
+
+
+
+
+
+/*小屏幕*/
+
+.container .row #record_sm{
+  /*width: 80%;*/
+}
+
+.container .row #record_sm .tip_word{
+    color:#80a63a ;
+    font-size: 20px;
+}
+
+.container .row #record_sm input{
+        width: 80%;
+        margin: 2px auto;
+}
+
+.container .row #record_sm #cal_xs{
+    width: 50%;
+    margin: 5px auto;
+}
+
+.container .row #record_sm p{
+   display: inline;
+}
+
+.container .row #record_sm #tip{
+    background-color: #E4E4E4;
+}
+
+
+
+@media screen and (max-width: 992px) {
+    .container .row #chart_bac{
+
+        margin-top: 20px;
+
+    }
+
+
+}
+
+

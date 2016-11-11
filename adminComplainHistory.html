@@ -1,0 +1,205 @@
+<!DOCTYPE HTML>
+
+
+
+<html>
+	<head>
+		<title>投诉处理</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1" />
+		<!--[if lte IE 8]><script src="assets/js/ie/html5shiv.js"></script><![endif]-->
+
+		<!--[if lte IE 8]><link rel="stylesheet" href="assets/css/ie8.css" /><![endif]-->
+		<link rel="icon" href="images/logo.ico">
+
+
+
+		<!-- 新 Bootstrap 核心 CSS 文件 -->
+
+		<link rel="stylesheet" href="assets/css/bootstrap.min.css">
+		<link rel="stylesheet" href="assets/css/init.css">
+		<link rel="stylesheet" href="assets/css/competitionAll.css">
+		<link rel="stylesheet" href="assets/css/adminComplain.css">
+	</head>
+	<body>
+		<!--<div id="page-wrapper">-->
+
+			<!-- Header -->
+		<header id="header">
+			<h1>Runner管理系统</h1>
+			<nav id="nav">
+				<ul>
+					<li><a href="index.html">登出</a></li>
+				</ul>
+			</nav>
+		</header>
+
+
+		<!--modal -->
+		<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+			<div class="modal-dialog">
+				<div class="modal-content">
+					<div class="modal-header">
+						<button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+						<h4 class="modal-title">确定要恢复已删除的活动吗</h4>
+					</div>
+
+					<div class="modal-footer">
+						<button type="button" class="btn btn-danger" data-dismiss="modal">确定</button>
+						<button type="button" class="btn btn-default" data-dismiss="modal">取消</button>
+
+					</div>
+				</div><!-- /.modal-content -->
+			</div><!-- /.modal-dialog -->
+		</div>
+
+
+
+		<div class="container" >
+			<div class="row">
+				<div class=" col-xs-10 col-sm-10  col-md-6  col-lg-6 col-md-offset-3  col-lg-offset-3 col-xs-offset-1  " >
+
+					<ul class="nav nav-tabs" role="tablist">
+						<li role="presentation" ><a href="adminMessage.html">消息通知</a></li>
+						<li role="presentation" ><a href="adminComplain.html">投诉处理</a></li>
+						<li role="presentation" class="active"><a href="adminComplainHistory.html">处理记录</a></li>
+					</ul>
+
+
+					<div class="row">
+
+						<div class=" col-sm-6   col-md-6 gallery-node   ">
+							<div class="thumbnail">
+								<div class="caption">
+									投诉活动主题:<h3 class="complain-p-base">上海马拉松</h3>
+									投诉活动介绍:<p class="complain-p-base">我假装是长跑冠军!</p>
+									投诉人:<p class="complain-p-base" >猜猜我是谁</p>被投诉人:<p class="complain-p-base">猜猜你是谁</p>
+									投诉原因:<p class="complain-p-base">测试一下</p>
+									投诉时间:<p class="complain-p-base">2016/10/28</p>
+									处理结果:<p class="complain-p-base complain-p-delete"><i>删除</i></p>
+									<p class="complain-p-base"><a href="#" class="btn btn-primary deal-base delete delete-confirm" role="button"  >恢复活动</a>
+									</p>
+
+
+								</div>
+							</div>
+						</div>
+
+						<div class=" col-sm-6   col-md-6 gallery-node   ">
+							<div class="thumbnail">
+								<div class="caption complain-history">
+									投诉活动主题:<h3 class="complain-p-base">上海马拉松</h3>
+									投诉活动介绍:<p class="complain-p-base">我假装是长跑冠军!</p>
+									投诉人:<p class="complain-p-base" >猜猜我是谁</p>被投诉人:<p class="complain-p-base">猜猜你是谁</p>
+									投诉原因:<p class="complain-p-base">测试一下</p>
+									投诉时间:<p class="complain-p-base">2016/10/28</p>
+									处理结果:<p class="complain-p-base complain-p-ignore "><i>忽略</i></p>
+									<p class="complain-p-base"><a href="#" class="btn btn-primary deal-base delete delete-confirm" role="button" disabled="disabled" >恢复活动</a>
+									</p>
+
+
+								</div>
+							</div>
+						</div>
+
+						<div class=" col-sm-6   col-md-6 gallery-node   ">
+							<div class="thumbnail">
+								<div class="caption">
+									投诉活动主题:<h3 class="complain-p-base">上海马拉松</h3>
+									投诉活动介绍:<p class="complain-p-base">我假装是长跑冠军!</p>
+									投诉人:<p class="complain-p-base" >猜猜我是谁</p>被投诉人:<p class="complain-p-base">猜猜你是谁</p>
+									投诉原因:<p class="complain-p-base">测试一下</p>
+									投诉时间:<p class="complain-p-base">2016/10/28</p>
+									处理结果:<p class="complain-p-base complain-p-delete"><i>删除</i></p>
+									<p class="complain-p-base"><a href="#" class="btn btn-primary deal-base delete delete-confirm" role="button" >恢复活动</a>
+									</p>
+
+
+								</div>
+							</div>
+						</div>
+
+
+						<div class=" col-sm-6   col-md-6 gallery-node   ">
+							<div class="thumbnail">
+								<div class="caption">
+									投诉活动主题:<h3 class="complain-p-base">上海马拉松</h3>
+									投诉活动介绍:<p class="complain-p-base">我假装是长跑冠军!</p>
+									投诉人:<p class="complain-p-base" >猜猜我是谁</p>被投诉人:<p class="complain-p-base">猜猜你是谁</p>
+									投诉原因:<p class="complain-p-base">测试一下</p>
+									投诉时间:<p class="complain-p-base">2016/10/28</p>
+									处理结果:<p class="complain-p-base complain-p-delete"><i>删除</i></p>
+									<p class="complain-p-base"><a href="#" class="btn btn-primary deal-base delete delete-confirm" role="button" >恢复活动</a>
+									</p>
+
+
+								</div>
+							</div>
+						</div>
+
+
+					<div class="col-xs-10 col-sm-10 col-md-10  col-lg-10 col-xs-offset-1  col-sm-offset-1 col-md-offset-1  col-lg-offset-1  media-list-base" id="loading">正在加载中,请稍后</div>
+
+
+				</div>
+			</div>
+
+
+
+
+		</div>
+	</div>
+
+
+
+
+
+			<!-- Footer -->
+				<footer id="footer">
+					<ul class="icons">
+						<li><a href="#" class="icon fa-twitter"><span class="label">Twitter</span></a></li>
+						<li><a href="#" class="icon fa-facebook"><span class="label">Facebook</span></a></li>
+						<li><a href="#" class="icon fa-instagram"><span class="label">Instagram</span></a></li>
+						<li><a href="#" class="icon fa-github"><span class="label">Github</span></a></li>
+						<li><a href="#" class="icon fa-dribbble"><span class="label">Dribbble</span></a></li>
+						<li><a href="#" class="icon fa-google-plus"><span class="label">Google+</span></a></li>
+					</ul>
+					<ul class="copyright">
+						<li>&copy; JiayiWu. All rights reserved.</li><li> <a href="http://218.94.159.99/">南京大学软件学院2016[面向Web计算]课程项目</a></li>
+					</ul>
+				</footer>
+
+		<!--</div>-->
+
+		<!-- Scripts -->
+			<script src="assets/js/jquery.min.js"></script>
+			<script src="assets/js/bootstrap.min.js"></script>
+			<script src="assets/js/echarts.common.min.js"></script>
+			<script src="assets/js/jquery.dropotron.min.js"></script>
+			<script src="assets/js/jquery.scrollgress.min.js"></script>
+			<script src="assets/js/skel.min.js"></script>
+			<script src="assets/js/util.js"></script>
+			<!--[if lte IE 8]><script src="assets/js/ie/respond.min.js"></script><![endif]-->
+			<script src="assets/js/main.js"></script>
+
+		<script>
+			$('.delete-confirm').on('click', function () {
+				$('#myModal').modal('toggle')
+
+
+
+				$("#myModal").modal().css({
+
+					"top": function () {
+						return ($(this).height() /5);
+
+
+					}
+				});
+			});
+
+
+
+		</script>
+	</body>
+</html>

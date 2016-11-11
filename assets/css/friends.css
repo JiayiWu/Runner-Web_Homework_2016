@@ -1,0 +1,53 @@
+/**
+    * Created by Jiayiwu on 16/10/17.
+    * Mail:wujiayi@lgdreamer.com
+    * Change everywhere
+    */
+
+.container{
+    width: 100%;
+
+}
+
+.container .row{
+    min-height:500px;
+}
+
+
+.container .row  .img-base{
+    margin-right:5px ;
+}
+
+/*friends System*/
+.container .row .media-list-base{
+    -webkit-border-radius: 15px;
+    border-radius: 15px;
+    margin-left: 30px;
+    overflow: hidden;
+    background-color: #f5f5f5;
+    margin-top: 20px;
+    height: 150px;
+
+}
+.container .row .media-list-base p{
+   margin: 0;
+}
+
+.container .row .media-list-base img{
+    margin-right: 5px;
+}
+
+.container .row .media-list-base button{
+    margin-top: 10px;
+}
+
+.container .row #paging{
+    margin-top: 10px;
+    margin-left: 15px;
+}
+
+#footer{
+    margin-top: 50px;
+}
+
+

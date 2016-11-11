@@ -1,0 +1,145 @@
+<!DOCTYPE HTML>
+
+<html>
+	<head>
+		<title>注册</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1" />
+		<!--[if lte IE 8]><script src="assets/js/ie/html5shiv.js"></script><![endif]-->
+
+		<!--[if lte IE 8]><link rel="stylesheet" href="assets/css/ie8.css" /><![endif]-->
+
+
+		<link rel="icon" href="images/logo.ico">
+
+		<!-- 新 Bootstrap 核心 CSS 文件 -->
+
+		<!--<link rel="stylesheet" href="assets/css/main.css" />-->
+		<link rel="stylesheet" href="assets/css/bootstrap.min.css">
+		<link rel="stylesheet" href="assets/css/init.css">
+		<link rel="stylesheet" href="assets/css/LRcommon.css">
+
+	</head>
+	<body>
+		<!--<div id="page-wrapper">-->
+
+			<!-- Header -->
+				<header id="header">
+					<h1><a href="index.html">回到首页</a></h1>
+					<nav id="nav">
+						<ul>
+
+							<li ><a href="login.html" class="button" >登录</a></li>
+							<li><a href="#" class="button">注册</a></li>
+						</ul>
+					</nav>
+				</header>
+
+
+		<div class="container">
+			<div class="row top-padding bottom-padding">
+				<div class="page-header text-center">
+					<h3>注册</h3>
+				</div>
+			</div>
+
+			<form id="form">
+				<div class="row top-padding bottom-padding">
+					<div class="col-xs-12 col-sm-8 col-md-6 col-lg-4 col-sm-offset-2 col-md-offset-3 col-lg-offset-4">
+						<input type="email" name="email" class="form-control" placeholder="邮箱" id="mail">
+					</div>
+				</div>
+
+				<div class="row top-padding bottom-padding">
+					<div class="col-xs-12 col-sm-8 col-md-6 col-lg-4 col-sm-offset-2 col-md-offset-3 col-lg-offset-4">
+						<input type="text" name="username" class="form-control" placeholder="用户名" id="userName">
+					</div>
+				</div>
+
+				<div class="row top-padding bottom-padding">
+					<div class="col-xs-12 col-sm-8 col-md-6 col-lg-4 col-sm-offset-2 col-md-offset-3 col-lg-offset-4">
+						<input type="text" name="nickname" class="form-control" placeholder="昵称" id="nickName">
+					</div>
+				</div>
+
+				<div class="row top-padding bottom-padding">
+					<div class="col-xs-12 col-sm-8 col-md-6 col-lg-4 col-sm-offset-2 col-md-offset-3 col-lg-offset-4">
+						<input type="password" name="password" class="form-control" placeholder="密码" id="passWord">
+					</div>
+				</div>
+
+				<div class="row top-padding bottom-padding">
+					<div class="col-xs-12 col-sm-8 col-md-6 col-lg-4 col-sm-offset-2 col-md-offset-3 col-lg-offset-4">
+						<input type="password" class="form-control" placeholder="确认密码" id="confirmPassword">
+					</div>
+				</div>
+
+				<div class="row top-padding bottom-padding">
+					<div class="col-xs-12 col-sm-8 col-md-6 col-lg-4 col-sm-offset-2 col-md-offset-3 col-lg-offset-4">
+						<button type="button" class="btn btn-primary btn-block" id="register">注册</button>
+					</div>
+				</div>
+			</form>
+		</div>
+
+			<!-- Footer -->
+				<footer id="footer">
+					<ul class="icons">
+						<li><a href="#" class="icon fa-twitter"><span class="label">Twitter</span></a></li>
+						<li><a href="#" class="icon fa-facebook"><span class="label">Facebook</span></a></li>
+						<li><a href="#" class="icon fa-instagram"><span class="label">Instagram</span></a></li>
+						<li><a href="#" class="icon fa-github"><span class="label">Github</span></a></li>
+						<li><a href="#" class="icon fa-dribbble"><span class="label">Dribbble</span></a></li>
+						<li><a href="#" class="icon fa-google-plus"><span class="label">Google+</span></a></li>
+					</ul>
+					<ul class="copyright">
+						<li>&copy; JiayiWu. All rights reserved.</li><li> <a href="http://218.94.159.99/">南京大学软件学院2016[面向Web计算]课程项目</a></li>
+					</ul>
+				</footer>
+
+		<!--</div>-->
+
+		<!-- Scripts -->
+			<script src="assets/js/jquery.min.js"></script>
+			<script src ="assets/js/bootstrap.min.js"></script>
+			<script src="assets/js/jquery.dropotron.min.js"></script>
+			<script src="assets/js/jquery.scrollgress.min.js"></script>
+			<script src="assets/js/skel.min.js"></script>
+			<script src="assets/js/util.js"></script>
+			<!--[if lte IE 8]><script src="assets/js/ie/respond.min.js"></script><![endif]-->
+			<script src="assets/js/main.js"></script>
+
+		<script>
+
+			$('form').on('keypress', function(e) {
+				if (e.which == 13) {
+					register();
+				}
+			});
+			$('#register').on('click', function () {
+				register();
+			});
+
+			function register() {
+				if ($(form).find('.error').length == 0 && $('#password').val().trim() != '') {
+					jQuery.ajax({
+						url: '/user/add',
+						type: 'post',
+						dataType: 'json',
+						data: $(form).serialize(),
+						success: function (data) {
+							if (data.state == true) {
+								top.location = '../home.html';
+							} else {
+								alert(data.message);
+							}
+						}
+					});
+				}
+			}
+
+
+		</script>
+
+	</body>
+</html>

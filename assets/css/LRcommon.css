@@ -1,0 +1,71 @@
+/**
+    * Created by Jiayiwu on 16/10/18.
+    * Mail:wujiayi@lgdreamer.com
+    * Change everywhere
+    */
+.top-padding{
+    margin-top : 32px;
+}
+
+.bottom-padding {
+    margin-bottom : 32px;
+}
+
+.top-sm-padding {
+    margin-top: 16px;
+}
+
+.top-md-padding {
+    margin-top : 64px;
+}
+
+.bottom-md-padding {
+    margin-bottom: 64px;
+}
+
+.top-lg-padding {
+    margin-top : 128px;
+}
+
+.bottom-lg-padding {
+    margin-bottom : 128px;
+}
+
+.error {
+    border-color: #ff3524;
+}
+
+a.pointer {
+    cursor: pointer;
+    color: #666;
+}
+
+a.light-pointer {
+    cursor: pointer;
+    color: #445577;
+}
+
+.btn-main {
+    background-color: #555;
+    color: #fff;
+}
+
+.no-border {
+    border: none;
+}
+
+.full {
+    width: 100%;
+}
+
+.title {
+    color: #fff;
+}
+
+h1.title {
+    margin-bottom: 80px;
+}
+
+.container{
+    background: white;
+}

@@ -1,0 +1,103 @@
+/**
+    * Created by Jiayiwu on 16/10/17.
+    * Mail:wujiayi@lgdreamer.com
+    * Change everywhere
+    */
+
+.container .row #userImage{
+    width: 80%;
+    border:3px solid black;
+}
+
+.container .row #userInfo{
+    -webkit-border-radius: 15px;
+    border-radius: 15px;
+    padding-top: 15px;
+    background: #ffffff;
+    text-align: center;
+}
+
+.container .row #userScore {
+    position: relative;
+    -webkit-border-radius: 30px;
+    border-radius: 30px;
+    margin-top: 30px;
+    text-align: center;
+    background: #ffffff;
+    margin-bottom: 30px;
+}
+
+.container .row #userScore #scoreImage{
+    width: 80%;
+}
+
+.container .row #userScore p{
+    margin: 0px;
+    display: inline;
+}
+
+.container .row #userScore #word{
+    position: absolute;
+    top: 30%;
+    left: 40%;
+    color: white;
+
+}
+
+.container .row #userScore #score{
+    position: absolute;
+    font-size: 3em;
+    top: 40%;
+    left: 40%;
+
+}
+
+.container .row #userInfo div{
+    font-family: "Microsoft YaHei";
+    font-size: 30px;
+}
+
+.container .row #userInfo div p{
+    margin: 0 ;
+    line-height: 1.5;
+    font-size: 15px;
+}
+
+
+.container .row #recordInfo {
+    -webkit-border-radius: 15px;
+    border-radius: 15px;
+    position: relative;
+    background-color: #ffffff;
+
+}
+
+.container .row #recordInfo #recordWord {
+    position: absolute;
+    color: #FFF;
+    left: 3em;
+    top: 30%;
+
+}
+.container .row #recordInfo #recordWord p{
+    line-height: 2em;
+    font-weight: 500;
+    display: inline;
+   margin: 0;
+
+}
+.container .row #recordInfo img{
+    margin-top: 15px;
+    text-align: center;
+    width: 100%;
+    z-index: -1;
+}
+
+.container .row #recordInfo #motto{
+    text-align: center;
+    font-size: 25px;
+    font-weight: 300;
+}
+#test{
+    background-color:red;
+}

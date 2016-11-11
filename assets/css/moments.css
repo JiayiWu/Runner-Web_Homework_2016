@@ -1,0 +1,121 @@
+/**
+    * Created by Jiayiwu on 16/10/19.
+    * Mail:wujiayi@lgdreamer.com
+    * Change everywhere
+    */
+.container{
+    width: 100%;
+
+}
+
+.container .row{
+    min-height:500px;
+}
+/*friends System*/
+.container .row .media-list-base{
+    -webkit-border-radius: 15px;
+    border-radius: 15px;
+    margin-left: 30px;
+    overflow: hidden;
+    background-color: #f5f5f5;
+    margin-top: 20px;
+    height: 100px;
+    padding-top: 5px;
+    padding-right: 20px;
+    height: auto;
+    padding-bottom: 5px;
+
+}
+.container .row .media-list-base h4{
+    margin: 0;
+}
+.container .row .media-list-base p{
+    font-size: 5px;
+   margin: 0;
+}
+
+
+.container .row .media-list-base .content{
+margin-top: 3px;
+    line-height: 23px;
+}
+
+.container .row  #momentsTip{
+
+   width: 40%;
+
+}
+
+.container .row  #tipSelector{
+
+    width: 60%;
+
+}
+.container .row  #textContent{
+    font-size: 15px;
+     width: 100%;
+    height: 76px;
+
+ }
+
+.container .row  .send{
+
+float: right;
+    width: 20%;
+    background-color: #FF8140;
+    border: solid 1px #FF8140;
+
+}
+
+
+
+
+.container .row  #loading{
+
+    text-align: center;
+
+}
+
+@media screen and (max-width: 992px) {
+
+
+
+    .container .row  #textContent{
+        font-size: 10px;
+        width: 100%;
+        height: 76px;
+
+    }
+}
+
+
+
+@media screen and (max-width: 768px) {
+    .container .row  #momentsTip{
+
+        width: 60%;
+
+    }
+
+    .container .row  #tipSelector{
+
+        width: 70%;
+
+    }
+
+    .container .row  .send{
+
+        float: right;
+        width: 25%;
+        background-color: #FF8140;
+        border: solid 1px #FF8140;
+
+    }
+
+
+    .container .row  #textContent{
+        /*font-size: 10px;*/
+        width: 100%;
+
+    }
+}

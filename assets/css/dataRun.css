@@ -1,0 +1,89 @@
+/**
+    * Created by Jiayiwu on 16/10/15.
+    * Mail:wujiayi@lgdreamer.com
+    * Change everywhere
+    */
+
+
+
+
+
+.container .row .basediv p{
+    margin: 0;
+    font-size: 20px;
+}
+
+.container .row #nav-base{
+    margin-bottom: 20px;
+}
+
+.container .row .basediv img{
+
+   width: 30%;
+}
+
+.container .row .basediv img{
+
+    width: 30%;
+}
+
+.container .row .basediv .rankimg{
+    margin-right: 5%;
+    margin-left: 5%;
+    display: inline;
+    position: relative;
+    width: 30%;
+
+}
+
+.container .row .basediv .rankimg p{
+   display: inline;
+}
+
+.container .row .basediv .rankimg #pointword{
+    font-size: 50px;
+    position: absolute;
+    bottom: 48px;
+    left: 63px;
+    color: #FFa200;
+    font-weight: 400;
+
+}
+
+.container .row .basediv .rankimg #rankword{
+    font-weight: 400;
+    font-size: 50px;
+    position: absolute;
+    bottom: 95px;
+    left: 37px;
+    color: #92B452;
+}
+
+@media screen and (max-width: 768px) {
+    .container .row .basediv .rankimg #pointword{
+        font-size: 25px;
+        position: absolute;
+        bottom: 20px;
+        left: 20px;
+        color: #FFa200;
+        font-weight: 400;
+
+    }
+
+    .container .row .basediv .rankimg #rankword{
+        font-weight: 400;
+        font-size: 20px;
+        position: absolute;
+        bottom: 38px;
+        left: 12px;
+        color: #92B452;
+    }
+}
+
+.container .row #chart{
+    overflow: hidden;
+    margin-top: 20px;
+}
+.container .row #chart div{
+    height: 250px;
+}

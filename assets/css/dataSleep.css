@@ -1,0 +1,25 @@
+/**
+    * Created by Jiayiwu on 16/10/15.
+    * Mail:wujiayi@lgdreamer.com
+    * Change everywhere
+    */
+
+.container{
+    width: 90%;
+
+}
+
+
+.container .row [id*="chart-sleep"]{
+    height: 481px;
+    margin-top: 20px;
+
+}
+.container .row #nav-base{
+    margin-bottom: 20px;
+}
+
+
+
+
+

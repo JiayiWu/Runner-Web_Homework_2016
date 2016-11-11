@@ -1,0 +1,16 @@
+[ 2016-11-11T00:08:16+08:00 ] 127.0.0.1 /htdocs/index.php?_ijt=aq3ds50amk8gieiad0rsk7aps
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000022s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000188s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000075s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000165s ]
+
+[ 2016-11-11T00:09:24+08:00 ] 127.0.0.1 /htdocs/index.php?_ijt=u1sp6j5o6ousr8tam0s9pre72g
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000028s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000193s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000080s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000201s ]
+
