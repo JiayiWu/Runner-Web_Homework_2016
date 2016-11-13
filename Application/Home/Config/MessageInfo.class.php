@@ -12,7 +12,7 @@ class MessageInfo
  var $objct;
  var $message;
 
-    function _construct($state,$objct,$message)
+    public function __construct($state,$objct,$message)
     {
         $this->state = $state;
         $this->objct= $objct;

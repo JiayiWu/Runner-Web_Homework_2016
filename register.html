@@ -108,7 +108,7 @@
 			<script src="assets/js/util.js"></script>
 			<!--[if lte IE 8]><script src="assets/js/ie/respond.min.js"></script><![endif]-->
 			<script src="assets/js/main.js"></script>
-
+			<script src="assets/js/jquery.md5.js"></script>
 		<script>
 
 			$('form').on('keypress', function(e) {
@@ -121,12 +121,19 @@
 			});
 
 			function register() {
+
+				var result = new Object();
+				result.email = $('#mail').val();
+				alert($('#password').val());
+				result.password =   $.md5($('#password').val());
+				result.nickname = $('#nickName').val();
+				result.username = $('#userName').val();
 				if ($(form).find('.error').length == 0 && $('#password').val().trim() != '') {
 					jQuery.ajax({
 						url: '/user/add',
 						type: 'post',
 						dataType: 'json',
-						data: $(form).serialize(),
+						data: result,
 						success: function (data) {
 							if (data.state == true) {
 								top.location = '../home.html';
