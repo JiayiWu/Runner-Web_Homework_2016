@@ -6,6 +6,7 @@ return array(
     'URL_ROUTER_ON'   => true,
     'URL_ROUTE_RULES'=>array(
         'user/add'=>'index.php/Home/user/userAdd',
+        'user/login'=>'Home/user/login',
         'user/acc'=>'index.php/Home/index/index'
     )
 

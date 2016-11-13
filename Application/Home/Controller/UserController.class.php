@@ -14,17 +14,19 @@ class UserController extends Controller
 {
 
     public function userAdd(){
-     $um = new um();
-
-     $result = $um->add();
+        $um = new um();
+        $result = $um->add();
         $this->ajaxReturn($result,"JSON");
 
     }
 
-    public function testA(){
-//        echo 'hhh'.'hah';
-        $mc = 'hhh1111';
-        $this->ajaxReturn($mc,"JSON");
+    public function login(){
+        $um = new um();
+        $result = $um->login();
+        $this->ajaxReturn($result,"JSON");
+
     }
+
+
 
 }

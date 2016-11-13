@@ -46,7 +46,7 @@
 			<form id="form">
 				<div class="row top-padding bottom-padding">
 					<div class="col-xs-12 col-sm-8 col-md-6 col-lg-4 col-sm-offset-2 col-md-offset-3 col-lg-offset-4">
-						<input type="text" name="userName" class="form-control" placeholder="邮箱/用户名" id="email">
+						<input type="text" name="userName" class="form-control" placeholder="邮箱/用户名" id="username">
 					</div>
 				</div>
 
@@ -99,6 +99,7 @@
 			<script src="assets/js/util.js"></script>
 			<!--[if lte IE 8]><script src="assets/js/ie/respond.min.js"></script><![endif]-->
 			<script src="assets/js/main.js"></script>
+			<script src="assets/js/jquery.md5.js"></script>
 
 		<script>
 
@@ -112,18 +113,25 @@
 			});
 
 			function login(){
-				var email = $('#email').val();
-				var password = $('#password').val();
+				var result = new Object();
+				result.userName = $('#username').val();
+				result.password = $.md5($('#password').val());
 
-				if(email == 'user'&&password =='test' ){
-					top.location = 'home.html';
-				}else if (email == 'admin'&&password =='test'){
-					top.location = 'adminMessage.html';
-				}
-				else {
-					top.location = 'login.html';
-					alert('用户名密码错误,请重新输入');
-					password.val('');
+				if ($(form).find('.error').length == 0 && $('#password').val().trim() != '') {
+					jQuery.ajax({
+						url: '/user/login',
+						type: 'post',
+						dataType: 'json',
+						data: result,
+						success: function (data) {
+							if (data.state == true) {
+								top.location = '../home.html';
+							} else {
+								$('#password').val("");
+								alert(data.message);
+							}
+						}
+					});
 				}
 
 			}

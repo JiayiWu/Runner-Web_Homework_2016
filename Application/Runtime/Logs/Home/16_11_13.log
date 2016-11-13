@@ -1,0 +1,51 @@
+[ 2016-11-13T18:42:26+08:00 ] ::1 /?XDEBUG_SESSION_START=18764
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000076s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000707s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000610s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000836s ]
+
+[ 2016-11-13T18:42:51+08:00 ] ::1 /user/login
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000046s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000472s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000323s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000482s ]
+NOTIC: [2048] Declaration of Home\Model\UserModel::add() should be compatible with Think\Model::add($data = '', $options = Array, $replace = false) /Applications/XAMPP/xamppfiles/htdocs/Application/Home/Model/UserModel.class.php 第 13 行.
+SQL: PRAGMA table_info( user ) [ RunTime:0.0042s ]
+SQL: PRAGMA table_info( user ) [ RunTime:0.0001s ]
+
+[ 2016-11-13T18:43:40+08:00 ] ::1 /?XDEBUG_SESSION_START=15864
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000052s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000607s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000521s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000731s ]
+
+[ 2016-11-13T18:44:28+08:00 ] ::1 /user/login
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000086s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000772s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000415s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000653s ]
+NOTIC: [2048] Declaration of Home\Model\UserModel::add() should be compatible with Think\Model::add($data = '', $options = Array, $replace = false) /Applications/XAMPP/xamppfiles/htdocs/Application/Home/Model/UserModel.class.php 第 13 行.
+SQL: PRAGMA table_info( user ) [ RunTime:0.0002s ]
+SQL: PRAGMA table_info( user ) [ RunTime:0.0001s ]
+SQL: SELECT * FROM user WHERE ( username="bestwujiayi"AND password="14d8d84451cadecca98b3019ed8d415d" ) LIMIT 1   [ RunTime:0.0027s ]
+
+[ 2016-11-13T18:46:26+08:00 ] ::1 /user/login
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000071s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000698s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000431s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000636s ]
+NOTIC: [2048] Declaration of Home\Model\UserModel::add() should be compatible with Think\Model::add($data = '', $options = Array, $replace = false) /Applications/XAMPP/xamppfiles/htdocs/Application/Home/Model/UserModel.class.php 第 13 行.
+SQL: PRAGMA table_info( user ) [ RunTime:0.0003s ]
+SQL: PRAGMA table_info( user ) [ RunTime:0.0001s ]
+SQL: SELECT * FROM user WHERE ( username="wujiayi"AND password="14d8d84451cadecca98b3019ed8d415d" ) LIMIT 1   [ RunTime:0.0002s ]
+

@@ -30,4 +30,20 @@ class UserModel extends Model
         }
 
     }
+
+    public function login(){
+        $User = M('User');
+// 根据表单提交的POST数据创建数据对象
+        $data = I('post.');
+        $result = $User->where('username="'.$data['userName'].'"'.'AND password="'.$data['password'].'"')->find();
+        if($result != null){
+            $findUser = $User->data();
+            session('user',$findUser);
+            return new MessageInfo(true,$findUser,'登录成功');
+        }else if ($result == null){
+            return new MessageInfo(false,null,'账号不存在或密码错误,请重新输入!');
+        }else{
+            return new MessageInfo(false,null,'非法输入!');
+        }
+    }
 }
