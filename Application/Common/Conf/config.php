@@ -5,8 +5,9 @@ return array(
     'URL_MODEL' => '2',
     'URL_ROUTER_ON'   => true,
     'URL_ROUTE_RULES'=>array(
-        'user/add'=>'index.php/Home/user/userAdd',
+        'user/add'=>'Home/user/userAdd',
         'user/login'=>'Home/user/login',
+        'runner/data'=>'Home/data/dataDeal',
         'user/acc'=>'index.php/Home/index/index'
     )
 

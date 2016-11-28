@@ -1,0 +1,135 @@
+<!DOCTYPE HTML>
+
+
+
+<html>
+	<head>
+		<title>投诉处理</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1" />
+		<!--[if lte IE 8]><script src="assets/js/ie/html5shiv.js"></script><![endif]-->
+
+		<!--[if lte IE 8]><link rel="stylesheet" href="assets/css/ie8.css" /><![endif]-->
+		<link rel="icon" href="images/logo.ico">
+
+
+
+		<!-- 新 Bootstrap 核心 CSS 文件 -->
+
+		<link rel="stylesheet" href="assets/css/bootstrap.min.css">
+		<link rel="stylesheet" href="assets/css/init.css">
+		<link rel="stylesheet" href="assets/css/competitionAll.css">
+		<link rel="stylesheet" href="assets/css/adminComplain.css">
+		<link rel="stylesheet" href="assets/css/competitionAll.css">
+		<link rel="stylesheet" href="assets/css/competitionCreate.css">
+		<link rel="stylesheet" href="assets/css/search.css">
+	</head>
+	<body>
+		<!--<div id="page-wrapper">-->
+
+			<!-- Header -->
+		<header id="header">
+			<h1>Runner管理系统</h1>
+			<nav id="nav">
+				<ul>
+					<li><a href="index.html">登出</a></li>
+				</ul>
+			</nav>
+		</header>
+
+
+
+
+
+
+		<div class="container" >
+			<div class="row">
+				<div class=" col-xs-10 col-sm-10  col-md-6  col-lg-6 col-md-offset-3  col-lg-offset-3 col-xs-offset-1  " >
+
+					<ul class="nav nav-tabs" role="tablist">
+						<!--<li role="presentation" class="active"><a href="adminMessage.html">消息通知</a></li>-->
+						<!--<li role="presentation" ><a href="adminComplain.html">投诉处理</a></li>-->
+						<!--<li role="presentation"><a href="adminComplainHistory.html">处理记录</a></li>-->
+					</ul>
+
+
+
+
+						<div class="row">
+
+							<div class=" col-xs-12 col-sm-10  col-md-10  col-lg-10 media-list-base " id="point">
+								<form id="form">
+									<p>数据注入(JSON)</p>
+									<textarea type="text" name="content" class="form-control create-base content-base" placeholder="请输入您要给所有用户通知的消息" id="content" style="height: 300px"></textarea>
+
+									<button type="button" class="btn btn-primary btn-block create-base" id="create-btn">推送消息</button>
+								</form>
+
+
+							</div>
+						</div>
+
+
+			</div>
+
+
+
+
+		</div>
+	</div>
+
+
+
+
+
+			<!-- Footer -->
+				<footer id="footer">
+					<ul class="icons">
+						<li><a href="#" class="icon fa-twitter"><span class="label">Twitter</span></a></li>
+						<li><a href="#" class="icon fa-facebook"><span class="label">Facebook</span></a></li>
+						<li><a href="#" class="icon fa-instagram"><span class="label">Instagram</span></a></li>
+						<li><a href="#" class="icon fa-github"><span class="label">Github</span></a></li>
+						<li><a href="#" class="icon fa-dribbble"><span class="label">Dribbble</span></a></li>
+						<li><a href="#" class="icon fa-google-plus"><span class="label">Google+</span></a></li>
+					</ul>
+					<ul class="copyright">
+						<li>&copy; JiayiWu. All rights reserved.</li><li> <a href="http://218.94.159.99/">南京大学软件学院2016[面向Web计算]课程项目</a></li>
+					</ul>
+				</footer>
+
+		<!--</div>-->
+
+		<!-- Scripts -->
+			<script src="assets/js/jquery.min.js"></script>
+			<script src="assets/js/bootstrap.min.js"></script>
+			<script src="assets/js/echarts.common.min.js"></script>
+			<script src="assets/js/jquery.dropotron.min.js"></script>
+			<script src="assets/js/jquery.scrollgress.min.js"></script>
+			<script src="assets/js/skel.min.js"></script>
+			<script src="assets/js/util.js"></script>
+			<!--[if lte IE 8]><script src="assets/js/ie/respond.min.js"></script><![endif]-->
+			<script src="assets/js/main.js"></script>
+
+		<script>
+
+			$('#create-btn').on('click', function () {
+				var result = $('#content').val();
+				alert(result);
+				jQuery.ajax({
+					url: '/runner/data',
+					type: 'post',
+					dataType: 'json',
+					data: result,
+					success: function (data) {
+						var result1 = data.state+data.message;
+						alert (result1);
+					}
+				});
+		});
+
+
+
+
+		</script>
+	</body>
+</html>
