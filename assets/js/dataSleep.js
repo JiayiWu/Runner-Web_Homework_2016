@@ -181,6 +181,6 @@ var sleepMap ={
         });
         myChart.setOption(option);
     }
-}
+};
 
 //睡眠质量分布

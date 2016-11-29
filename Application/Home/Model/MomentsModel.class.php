@@ -20,11 +20,11 @@ class MomentsModel extends Model
          ownerid ='".$user['id']."')";
         $result = $db->query($sql);
         for($i = 0 ;$i<count($result);$i++){
-            $result[i]['date'] = date('Y-M-D H:i',$result[i]['date']) ;
-            if($result[i]['ownerid']!=$user[i]['id'])
-                $result[i]['isMy'] = false;
+            $result[$i]['createdate'] = date('Y-m-d H:i',$result[$i]['createdate']) ;
+            if($result[$i]['ownerid']!=$user[$i]['id'])
+                $result[$i]['isMy'] = false;
             else
-                $result[i]['isMy'] = true;
+                $result[$i]['isMy'] = true;
 
         }
         if($result == null){
@@ -42,7 +42,7 @@ class MomentsModel extends Model
         $tem['ownerid'] = $user['id'];
         $tem['ownername'] = $user['nickname'];
         $tem['content'] = I('post.content');
-        $tem['createdate'] = strtotime(time());
+        $tem['createdate'] = time();
 
        $result = $db->data($tem)->add();
         if($result == false)

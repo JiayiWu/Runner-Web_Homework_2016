@@ -14,7 +14,7 @@ return array(
         'runner/data'=>'Home/data/dataDeal',
         'moments/add'=>'Home/friends/momentsAdd',
         'moments/delete'=>'Home/friends/momentsDelete',
-        'moments'=>'Home/friends/getMomenmts',
+        'moments'=>'Home/friends/momentsList',
         'user/acc'=>'index.php/Home/index/index'
     )
 
