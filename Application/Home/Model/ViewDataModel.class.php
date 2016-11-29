@@ -53,8 +53,8 @@ class ViewDataModel extends Model
         }
 
         $sportData = M('body_data');
-        $result = $sportData->where('userid='.$user[id])->select();
-
+        $result = $sportData->where('userid='.$user[id])->order('date desc')->limit(10)->select();
+        $result = array_reverse($result);
 
         for ( $i = 0;$i<count($result);$i++){
             $result[$i][date] = date("Y-m-d",$result[$i][date]);

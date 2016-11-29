@@ -28,14 +28,14 @@
 }
 
 
-.container .row #record #height{
+.container .row #record #weight{
     position: absolute;
     width:80px;
     bottom: 155px;
     left: 130px;
 }
 
-.container .row #record #weight{
+.container .row #record #height{
     position: absolute;
     width:80px;
     bottom: 195px;

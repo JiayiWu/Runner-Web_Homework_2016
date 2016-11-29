@@ -27,6 +27,11 @@ class UserController extends Controller
 
     }
 
+    public function userBasicInfo(){
+        $um = new um();
+        $this->ajaxReturn($um->basicInfo(),"JSON");
+    }
+
 
 
 }

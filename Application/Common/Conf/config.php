@@ -7,6 +7,7 @@ return array(
     'URL_ROUTE_RULES'=>array(
         'user/add'=>'Home/user/userAdd',
         'user/login'=>'Home/user/login',
+        'user/basicinfo'=>'Home/user/userBasicInfo',
          'runner/data/sport'=>'Home/viewdata/getSportData',
         'runner/data/body'=>'Home/viewdata/getBodyData',
         'runner/data/sleep'=>'Home/viewdata/getSleepData',

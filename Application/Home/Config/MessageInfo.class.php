@@ -9,13 +9,13 @@ namespace Home\Config;
 class MessageInfo
 {
  var $state;
- var $objct;
+ var $object;
  var $message;
 
-    public function __construct($state,$objct,$message)
+    public function __construct($state,$object,$message)
     {
         $this->state = $state;
-        $this->objct= $objct;
+        $this->object= $object;
         $this->message = $message;
         }
 }

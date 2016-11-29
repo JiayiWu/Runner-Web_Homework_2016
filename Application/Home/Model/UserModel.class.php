@@ -46,4 +46,22 @@ class UserModel extends Model
             return new MessageInfo(false,null,'非法输入!');
         }
     }
+
+
+    public function basicInfo(){
+        $User = M('User');
+        $result = $User->where('username="'.session('user')['username'].'"'.'AND password="'.session('user')['password'].'"')->find();
+
+        if($result == null ){
+            return new MessageInfo(false,null,'账户未登录');
+        }
+
+        $vo['weight'] = $result['weight'];
+        $vo['height'] = $result['height'];
+        $vo['nickname'] = $result['nickname'];
+        $vo['sex'] = $result['sex'];
+        $vo['slogan'] = $result['slogan'];
+
+        return new MessageInfo(true,$vo,"信息获取成功");
+    }
 }

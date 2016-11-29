@@ -21,13 +21,13 @@ class ViewDataController extends Controller
 
  public function getBodyData(){
      $vd = new vd();
-     $result = $vd->getSleepData();
+     $result = $vd->getBodyData();
      $this->ajaxReturn($result,"JSON");
  }
 
  public function getSleepData(){
      $vd = new vd();
-     $result = $vd->getBodyData();
+     $result = $vd->getSleepData();
      $this->ajaxReturn($result,"JSON");
  }
 }
