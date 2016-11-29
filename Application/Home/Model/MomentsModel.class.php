@@ -21,10 +21,13 @@ class MomentsModel extends Model
         $result = $db->query($sql);
         for($i = 0 ;$i<count($result);$i++){
             $result[$i]['createdate'] = date('Y-m-d H:i',$result[$i]['createdate']) ;
-            if($result[$i]['ownerid']!=$user[$i]['id'])
+
+            if($result[$i]['ownerid']!=$user['id']) {
                 $result[$i]['isMy'] = false;
-            else
+            }
+            else {
                 $result[$i]['isMy'] = true;
+            }
 
         }
         if($result == null){
@@ -54,7 +57,7 @@ class MomentsModel extends Model
         $user = session('user');
         $db = M('moments_record');
         $id = I('post.id');
-        if($db->where('id='.$id.'AND ownerid='.$user['id'])->find()!=null){
+        if($db->where('id='.$id.' AND ownerid='.$user['id'])->find()!=null){
             $db->where('id='.$id)->delete();
             return new MessageInfo(true,null,"1620:删除成功");
         }else{

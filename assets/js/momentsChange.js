@@ -14,6 +14,37 @@ getAllMoments();
     $('#send-button-xs').on('click', function () {
         addMoments();
     });
+
+    //循环遍历所有的按钮，一个一个添加事件绑定
+
+    // $("").click(function () {
+    //     var deleteId =  $(this).attr(id);
+    //     var point =  $(('#'+deleteId)).parent().parent().parent().children(':hidden').html();
+    //     swal({
+    //         title: "确定删除？",
+    //         text: "您确定要删除这条数据？",
+    //         type: "warning",
+    //         showCancelButton: true,
+    //         closeOnConfirm: false,
+    //         confirmButtonText: "是的，我要删除",
+    //         confirmButtonColor: "#ec6c62"
+    //     }, function() {
+    //         $.ajax({
+    //             url: "moments/delete",
+    //             type: "post",
+    //             data:{
+    //                 id:point
+    //             }
+    //         }).done(function(data) {
+    //             if(data.state == true)
+    //                 swal("操作成功!", "已成功删除数据！", "success");
+    //             else
+    //                 swal("OMG", "删除操作失败了!", "error");
+    //         }).error(function(data) {
+    //             swal("OMG", "删除操作失败了!", "error");
+    //         });
+    //     });
+    // })
 }
 
 function addMoments() {
@@ -53,8 +84,42 @@ function getAllMoments() {
                 var object = data.object;
                 if(object !=null) {
                     for (var i = 0; i < object.length; i++) {
-                        var tem = makeTheHtmlElement(object[i].id, object[i].ownerid, object[i].ownername, object[i].createdate, object[i].content);
+                        var tem = makeTheHtmlElement(object[i].id, object[i].ownerid, object[i].ownername, object[i].createdate, object[i].content,object[i].isMy,i);
                         $('#mainControl').after(tem);
+                    }
+
+                    var btns = $('.deletebutton');
+                    for (var i = 0; i < btns.length; ++i) {
+                        btns[i].onclick = function () {
+                            var deleteId =  $(this).attr('id');
+                            var point =  $(('#'+deleteId)).parent().parent().parent().children(':hidden').html();
+                            swal({
+                                title: "确定删除？",
+                                text: "您确定要删除这条数据？",
+                                type: "warning",
+                                showCancelButton: true,
+                                closeOnConfirm: false,
+                                confirmButtonText: "是的，我要删除",
+                                confirmButtonColor: "#ec6c62"
+                            }, function() {
+                                $.ajax({
+                                    url: "moments/delete",
+                                    type: "post",
+                                    data:{
+                                        id:point
+                                    }
+                                }).done(function(data) {
+                                    if(data.state == true){
+                                        swal("操作成功!", "已成功删除数据！", "success");
+                                    getAllMoments();
+                                    }
+                                    else
+                                        swal("OMG", "删除操作失败了!", "error");
+                                }).error(function(data) {
+                                    swal("OMG", "删除操作失败了!", "error");
+                                });
+                            });
+                        }
                     }
                 }
             }
@@ -63,7 +128,7 @@ function getAllMoments() {
 }
 
 
-function makeTheHtmlElement(elementid,id,name,time,content) {
+function makeTheHtmlElement(elementid,id,name,time,content,isMy,buttonId) {
     var result = "	<div class='col-xs-10 col-sm-10 col-md-10  col-lg-10 col-xs-offset-1  col-sm-offset-1 col-md-offset-1  col-lg-offset-1  media-list-base mainPanel' >";
     result +="<div class='media'>";
     result= result+"<p style=visibility: hidden>"+elementid+"</p>";
@@ -73,6 +138,11 @@ function makeTheHtmlElement(elementid,id,name,time,content) {
     result+= "<div class='media-body'>";
     result+="<h4 class='media-heading'>";
     result+=name;
+
+    if(isMy == true){
+        result+=" <img src='\.\/images\/deleteButton\.png' class='deletebutton' id='"+buttonId+"'>";
+    }
+
     result+="</h4>";
     result+="<p class='time'>";
     result+=time;
@@ -86,3 +156,8 @@ function makeTheHtmlElement(elementid,id,name,time,content) {
 function picMatch(id) {
     return id%10;
 }
+
+function  deleteButton() {
+
+}
+
