@@ -12,6 +12,9 @@ return array(
         'runner/data/body'=>'Home/viewdata/getBodyData',
         'runner/data/sleep'=>'Home/viewdata/getSleepData',
         'runner/data'=>'Home/data/dataDeal',
+        'moments/add'=>'Home/friends/momentsAdd',
+        'moments/delete'=>'Home/friends/momentsDelete',
+        'moments'=>'Home/friends/getMomenmts',
         'user/acc'=>'index.php/Home/index/index'
     )
 
