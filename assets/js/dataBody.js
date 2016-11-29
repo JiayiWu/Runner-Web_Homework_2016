@@ -9,6 +9,7 @@
 
 $(function () {
     dataBodyChart.draw();
+
 });
 var dataBodyChart = {
     draw :function () {
@@ -25,36 +26,42 @@ var dataBodyChart = {
                     dataBodyChart.height = data.object.height;
                     $('#height').val(dataBodyChart.height);
                     $('#height_xs').val(dataBodyChart.height);
+
+
+
+                    jQuery.ajax({
+                        url: '/runner/data/body',
+                        cache: false,
+                        success: function(data) {
+                            if(data.object == null){
+                                series_bf.push(0);
+                                series_weight.push(0);
+                                timeData.push(0);
+                            }else{
+                                var object = data.object;
+                                for(var i = 0;i<object.length;i++){
+                                    series_weight.push(object[i].weight);
+                                    series_bf.push(object[i].bf);
+                                    timeData.push(object[i].date);
+                                }
+                            }
+
+                            dataBodyChart.drawChart(series_weight,series_bf, timeData);
+                            $('#weight').val(object[object.length-1].weight);
+                            $('#weight_xs').val(object[object.length-1].weight);
+
+                            calBMIAndOther();
+                        }
+                    })
                 }
-            }
-        }),
 
 
-
-        jQuery.ajax({
-            url: '/runner/data/body',
-            cache: false,
-            success: function(data) {
-             if(data.object == null){
-                 series_bf.push(0);
-                 series_weight.push(0);
-                 timeData.push(0);
-             }else{
-                 var object = data.object;
-                for(var i = 0;i<object.length;i++){
-                    series_weight.push(object[i].weight);
-                    series_bf.push(object[i].bf);
-                    timeData.push(object[i].date);
-                }
-             }
-
-                dataBodyChart.drawChart(series_weight,series_bf, timeData);
-                 $('#weight').val(object[object.length-1].weight);
-                 $('#weight_xs').val(object[object.length-1].weight);
-
-                calBMIAndOther();
             }
         })
+
+
+
+
     },
     drawChart:function (series_weigth,series_bf,timeData) {
         var myChart = echarts.init(document.getElementById('chart'));
