@@ -91,34 +91,7 @@ function getAllMoments() {
                     var btns = $('.deletebutton');
                     for (var i = 0; i < btns.length; ++i) {
                         btns[i].onclick = function () {
-                            var deleteId =  $(this).attr('id');
-                            var point =  $(('#'+deleteId)).parent().parent().parent().children(':hidden').html();
-                            swal({
-                                title: "确定删除？",
-                                text: "您确定要删除这条数据？",
-                                type: "warning",
-                                showCancelButton: true,
-                                closeOnConfirm: false,
-                                confirmButtonText: "是的，我要删除",
-                                confirmButtonColor: "#ec6c62"
-                            }, function() {
-                                $.ajax({
-                                    url: "moments/delete",
-                                    type: "post",
-                                    data:{
-                                        id:point
-                                    }
-                                }).done(function(data) {
-                                    if(data.state == true){
-                                        swal("操作成功!", "已成功删除数据！", "success");
-                                    getAllMoments();
-                                    }
-                                    else
-                                        swal("OMG", "删除操作失败了!", "error");
-                                }).error(function(data) {
-                                    swal("OMG", "删除操作失败了!", "error");
-                                });
-                            });
+                            deleteButton($(this).attr('id'));
                         }
                     }
                 }
@@ -157,7 +130,34 @@ function picMatch(id) {
     return id%10;
 }
 
-function  deleteButton() {
-
+function  deleteButton(id) {
+    var deleteId =  id;
+   var point =  $(('#'+deleteId)).parent().parent().parent().children(':hidden').html();
+    swal({
+        title: "确定删除？",
+        text: "您确定要删除这条数据？",
+        type: "warning",
+        showCancelButton: true,
+        closeOnConfirm: false,
+        confirmButtonText: "是的，我要删除",
+        confirmButtonColor: "#ec6c62"
+    }, function() {
+        $.ajax({
+            url: "moments/delete",
+            type: "post",
+            data:{
+                id:point
+            }
+        }).done(function(data) {
+            if(data.state == true) {
+                swal("操作成功!", "已成功删除数据！", "success");
+                getAllMoments();
+            }
+            else
+                swal("OMG", "删除操作失败了!", "error");
+        }).error(function(data) {
+            swal("OMG", "删除操作失败了!", "error");
+        });
+    });
 }
 

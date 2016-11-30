@@ -15,6 +15,13 @@ return array(
         'moments/add'=>'Home/friends/momentsAdd',
         'moments/delete'=>'Home/friends/momentsDelete',
         'moments'=>'Home/friends/momentsList',
+        'friends/serrch'=>'Home/friends/friendSearch',
+        'friends/canclef'=>'Home/friends/friendCancle',
+        'friends/fans'=>'Home/friends/friendFansList',
+        'friends/focus'=>'Home/friends/friendFocus',
+        'friends/recommend'=>'Home/friends/recommendFriend',
+        'friends'=>'Home/friends/friendList',
+
         'user/acc'=>'index.php/Home/index/index'
     )
 

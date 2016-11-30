@@ -18,6 +18,7 @@
 		<link rel="stylesheet" href="assets/css/init.css">
 		<link rel="stylesheet" href="assets/css/friends.css">
 		<link rel="stylesheet" href="assets/css/search.css">
+		<link rel="stylesheet" href="assets/css/sweetalert.css">
 	</head>
 	<body>
 		<!--<div id="page-wrapper">-->
@@ -61,7 +62,7 @@
 					</ul>
 
 
-					<div class="row">
+					<div class="row" id="re-local" >
 						<div class="col-xs-12 col-sm-12 col-md-5  col-lg-5 list-friend media-list-base" >
 							<ul >
 								<li class="media">
@@ -208,7 +209,61 @@
 			<script src="assets/js/util.js"></script>
 			<!--[if lte IE 8]><script src="assets/js/ie/respond.min.js"></script><![endif]-->
 			<script src="assets/js/main.js"></script>
+		<script src="assets/js/jquery.tmpl.min.js"></script>
+		<script src="assets/js/sweetalert.min.js"></script>
+		<script src="assets/js/friendsJs.js"></script>
 
+		<script>
+			$(function () {
+				fansList();
+			});
 
+			function fansList() {
+				var result = "<div class='col-xs-12 col-sm-12  col-md-5  col-lg-5 list-friend media-list-base' > " + "<p  style='visibility: hidden'>${id}</p>" +
+						"<ul > <li class='media'> <a class='media-left media-middle' href='#'> " +
+						"<img src='./others/dp/jyt.png' class='img-base' alt='dp'> " +
+						"</a> <div class='media-body'> <h4 class='media-heading'>${name}</h4>简介:<p>${slogan}</p>" +
+						" <button type='button' class='btn ${button_module} button-base' id='${id}' lastmodel ='${model}' model='${model}'>${choice}</button><br/> </div> " +
+						"</li> </ul> </div> </div>"
+				jQuery.ajax({
+					url: 'friends/fans',
+					type: 'post',
+					cache: false,
+					success: function(data) {
+						if(data.state == true){
+							$("div").remove(".media-list-base");
+							var object = data.object;
+							if(object!=null){
+								var pointElement = $("#re-local")
+
+								for (var i = 0;i<object.length;i++){
+									if(object[i].focusEachOther) {
+										mainPanelMade(object[i].id, object[i].nickname, object[i].slogan, 2, pointElement, result);
+										var button = $('#'+object[i].id);
+										$(button).attr("lastmodel",2);
+										$(button).attr("model",2);
+
+									}
+									else {
+										mainPanelMade(object[i].id, object[i].nickname, object[i].slogan, 1, pointElement, result);
+										var button = $('#'+object[i].id);
+										$(button).attr("lastmodel",2);
+										$(button).attr("model",1);
+									}
+
+								}
+								var btns = $('.button-base');
+								for (var i = 0; i < btns.length; ++i) {
+
+									btns[i].onclick = function () {
+										buttonEvent($(this).attr('id'));
+									}
+								}
+							}
+						}
+					}
+				})
+			}
+		</script>
 	</body>
 </html>
