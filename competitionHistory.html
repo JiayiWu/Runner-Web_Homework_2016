@@ -18,6 +18,7 @@
 		<link rel="stylesheet" href="assets/css/init.css">
 		<link rel="stylesheet" href="assets/css/competitionAll.css">
 		<link rel="stylesheet" href="assets/css/competitionHistory.css">
+		<link rel="stylesheet" href="assets/css/sweetalert.css">
 	</head>
 	<body>
 		<!--<div id="page-wrapper">-->
@@ -66,12 +67,12 @@
 
 
 
-					<div class="row">
+					<div class="row" id="re-local">
 
 
-						<div class="progress win-base">
-							<div class="progress-bar progress-bar-info progress-bar-striped active" role="progressbar" aria-valuenow="20" aria-valuemin="0" aria-valuemax="100" style="width: 75%">
-								<p>胜率:75%(3/4)</p>
+						<div class="progress win-base" >
+							<div id="percent-pro" class="progress-bar progress-bar-info progress-bar-striped active" role="progressbar" aria-valuenow="20" aria-valuemin="0" aria-valuemax="100" style="width: 0%">
+								<p id="win-percent">胜率:75%(3/4)</p>
 							</div>
 						</div>
 
@@ -162,7 +163,9 @@
 			<script src="assets/js/util.js"></script>
 			<!--[if lte IE 8]><script src="assets/js/ie/respond.min.js"></script><![endif]-->
 			<script src="assets/js/main.js"></script>
-
+		<script src="assets/js/sweetalert.min.js"></script>
+		<script src="assets/js/jquery.tmpl.min.js"></script>
+		<script src="assets/js/competitionResult.js"></script>
 
 	</body>
 </html>

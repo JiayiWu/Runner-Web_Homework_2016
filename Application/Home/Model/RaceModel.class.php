@@ -131,7 +131,7 @@ class RaceModel extends Model
      public function raceResult(){
          $user = session('user');
          $db = new Model();
-        $sql = "select r.topic as topic , r.content as content ,ff.winnerid as winnerid from (select raceid , winnerid from race_record where joinuserid= ".$user['id']." OR createuserid=".$user['id'].") ff ,race r where r.id = ff. raceid";
+        $sql = "select r.id as id, r.topic as topic , r.content as content ,ff.winnerid as winnerid from (select raceid , winnerid from race_record where joinuserid= ".$user['id']." OR createuserid=".$user['id'].") ff ,race r where r.id = ff. raceid";
          $result = $db->query($sql);
          $winCount = 0;
          for($i = 0 ;$i<count($result);$i++){
