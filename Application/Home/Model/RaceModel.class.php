@@ -33,7 +33,7 @@ class RaceModel extends Model
         $db = M('race');
         $data = I('post.');
         $tem['content'] = $data['content'];
-        $tem['topic'] = $data['topic'];
+
         $result = $db->where('id='.$data['id'])->save($tem);
         if($result == true){
             return new MessageInfo(true,$data,"1260:比赛修改成功");
@@ -61,7 +61,8 @@ class RaceModel extends Model
             return new MessageInfo(false,null,"1220:自己不能参加自己创建的比赛");
         }
 
-        $ownerid =  $db->where("id=".$data)->find()['ownerid'];
+        $temRace1 =  $db->where("id=".$data)->find();
+        $ownerid = $temRace1['userid'];
         $joinid = $user['id'];
 
         $timeBefore = time()-3600*24*7;
@@ -76,10 +77,10 @@ class RaceModel extends Model
         $dataJoinCount = 0;
         if($dataOwner != null){
             foreach ($dataOwner as $tem)
-                $dataOwnerCount+=$dataOwner['walkmile'];
+                $dataOwnerCount+=$tem['walkmile'];
         }else if($dataJoin != null){
             foreach ($dataJoinCount as $tem)
-                $dataJoinCount+=$dataJoin['walkmile'];
+                $dataJoinCount+=$tem['walkmile'];
         }
 
 
@@ -89,16 +90,21 @@ class RaceModel extends Model
         $temRecord['raceid'] = $data;
         $temRecord['createuserid'] = $ownerid;
         $temRecord['joinuserid'] = $joinid;
-        $temRecord['createdate'] = $temRace['createdate'];
+        $temRecord['createdate'] = $temRace1['createdate'];
 
         $temRaceMark['isenable'] = 1;
         $db->where("id=".$data)->save($temRaceMark);
+
+        $temResult['ownercount'] = $dataOwnerCount;
+        $temResult['joincount'] = $dataJoinCount;
+        $temResult['result'] = 0;
         if ($dataOwnerCount>$dataJoinCount){
 
             $userdb->where('id='.$ownerid)->setInc('score', 3);
             $temRecord['winnerid'] = $ownerid;
             $recorddb->data($temRecord)->add();
-            return new MessageInfo(true,0,"1260:您输掉了比赛");
+            $temResult['result'] = 0;
+            return new MessageInfo(true,$temResult,"1260:您输掉了比赛");
 
 
 
@@ -106,7 +112,8 @@ class RaceModel extends Model
             $userdb->where('id='.$joinid)->setInc('score', 3);
             $temRecord['winnerid'] = $joinid;
             $recorddb->data($temRecord)->add();
-            return new MessageInfo(true,1,"1260:您赢得了比赛");
+            $temResult['result'] = 1;
+            return new MessageInfo(true,$temResult,"1260:您赢得了比赛");
         }else {
             $userdb->where('id='.$joinid)->setInc('score', 1);
             $userdb->where('id='.$ownerid)->setInc('score', 1);
@@ -114,7 +121,8 @@ class RaceModel extends Model
             $recorddb->data($temRecord)->add();
             $temRecord['winnerid'] = $ownerid;
             $recorddb->data($temRecord)->add();
-            return new MessageInfo(true,2,"1260:您与对方打成了平手");
+            $temResult['result'] = 2;
+            return new MessageInfo(true,$temResult,"1260:您与对方打成了平手");
         }
 
      }
@@ -144,8 +152,15 @@ class RaceModel extends Model
 
      public function raceList(){
          $db = new Model();
-         $sql = "select * from race where isenable <> 1";
+         $sql = "select r.id as id, r.topic as topic,r.content as content ,u.nickname as nickname from race r ,user u where isenable = 0 AND u.id = r.userid";
          $result = $db->query($sql);
+         return new MessageInfo('true',$result,"1260:列表获取成功");
+     }
+
+     public function raceMyList(){
+         $user = session('user');
+         $db = M('race');
+         $result = $db->where('userid='.$user['id']." AND isenable = 0" )->select();
          return new MessageInfo('true',$result,"1260:列表获取成功");
      }
 }

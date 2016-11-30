@@ -43,4 +43,9 @@ class RaceController extends Controller
         $rm = new rm();
         $this->ajaxReturn($rm->raceList(),"JSON");
     }
+
+    public function raceMyList(){
+        $rm = new rm();
+        $this->ajaxReturn($rm->raceMyList(),"JSON");
+    }
 }

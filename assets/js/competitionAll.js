@@ -1,0 +1,92 @@
+/**
+ * Created by StevenWu on 16/11/30.
+ */
+
+$(function () {
+    init();
+});
+function init() {
+    jQuery.ajax({
+        url: 'race',
+        cache: false,
+        success: function(data) {
+            var point = $('#re-local');
+            if(data.state == "true"){
+
+                $("div").remove(".col-sm-6.gallery-node");
+                var object = data.object;
+                if(object.length == 0){
+                    var temP = "<div style='text-align: center;font-size: 20px;color: white;margin-top: 200px' class='gallery-node' id='temP'><p >目前还没有人创建比赛!</p></div>";
+                    $('#re-local').append(temP);
+
+
+                }else {
+                    $('p').removeClass("#temP");
+                }
+                for (var i = 0;i<object.length;i++){
+                    insertNode(object[i].id,object[i].topic,object[i].content,object[i].nickname,point);
+                }
+
+                var btns = $('.button-base');
+                for (var i = 0; i < btns.length; ++i) {
+
+                    btns[i].onclick = function () {
+                        clickEvent($(this).attr('id'));
+                    }
+                }
+            }
+        }
+    })
+}
+
+function insertNode(id,topic,content,name,pointElement) {
+    var tem = parseInt(id);
+    var pic = tem%4;
+    if(pic == 0)
+        pic = 1;
+    var result = "<div class=' col-sm-6  col-md-6 gallery-node '> " +
+        "<div class='thumbnail'> <img src='images/cover/com${pic}.png' alt='cover'> " +
+        "<div class='caption'> <h3>${topic}</h3> <p style='margin: 10px 0 10px 0 '>${content}</p> <h4>${name}</h4>" +
+        " <p><a href='#' class='btn btn-primary button-base' role='button' id='${id}'>参加比赛</a> " +
+        "</p> <img  class='report-img' src='images/report.png'> " +
+        "</div> </div> </div>"
+    $.tmpl(result, {
+        "id": id,
+        name:name,
+        pic:pic,
+        topic:topic,
+        content:content
+    }).appendTo(pointElement);
+}
+
+function clickEvent(id) {
+    jQuery.ajax({
+        url: 'race/join',
+        type:'post',
+        cache: false,
+        data:{
+            id:id
+        },
+        success: function(data) {
+
+            if(data.state == true){
+
+                var object = data.object;
+                var joinCountMile = "您7天内的运动公里数为: "+object.joincount+" \n";
+                var ownerCount ="对手7天内的运动公里数为: "+object.ownercount+" \n";
+                var resultMatch = object.result;
+                if(object.result == 0){
+                    swal("比赛败北!", joinCountMile+ownerCount, "error");
+                }else if(object.result == 1){
+                    swal("获胜!", joinCountMile+ownerCount, "success");
+                }else {
+                    swal("平局!", joinCountMile+ownerCount, "warning");
+                }
+                init();
+
+            }else {
+                swal("出错啦!", data.message, "error");
+            }
+        }
+    })
+}

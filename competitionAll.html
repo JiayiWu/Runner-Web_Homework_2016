@@ -19,6 +19,7 @@
 		<link rel="stylesheet" href="assets/css/bootstrap.min.css">
 		<link rel="stylesheet" href="assets/css/init.css">
 		<link rel="stylesheet" href="assets/css/competitionAll.css">
+		<link rel="stylesheet" href="assets/css/sweetalert.css">
 
 	</head>
 	<body>
@@ -87,7 +88,7 @@
 					</ul>
 
 
-					<div class="row">
+					<div class="row" id="re-local">
 
 							<div class=" col-sm-6   col-md-6 gallery-node  ">
 								<div class="thumbnail">
@@ -131,6 +132,7 @@
 								<div class="caption">
 									<h3>北京马拉松</h3>
 									<p>一起去看故宫吧!</p>
+
 									<p><a href="#" class="btn btn-primary button-base" role="button">参加比赛</a> </p>
 									<img class="report-img" src="images/report.png">
 								</div>
@@ -138,7 +140,7 @@
 						</div>
 					</div>
 
-					<div class="col-xs-10 col-sm-10 col-md-10  col-lg-10 col-xs-offset-1  col-sm-offset-1 col-md-offset-1  col-lg-offset-1  media-list-base" id="loading">正在加载中,请稍后</div>
+					<!--<div class="col-xs-10 col-sm-10 col-md-10  col-lg-10 col-xs-offset-1  col-sm-offset-1 col-md-offset-1  col-lg-offset-1  media-list-base" id="loading">正在加载中,请稍后</div>-->
 
 
 				</div>
@@ -176,7 +178,9 @@
 			<script src="assets/js/util.js"></script>
 			<!--[if lte IE 8]><script src="assets/js/ie/respond.min.js"></script><![endif]-->
 			<script src="assets/js/main.js"></script>
-
+		<script src="assets/js/jquery.tmpl.min.js"></script>
+			<script src="assets/js/sweetalert.min.js"></script>
+			<script src="assets/js/competitionAll.js"></script>
 		<script>
 			$('.report-img').on('click', function () {
 				$('#myModal').modal('toggle')

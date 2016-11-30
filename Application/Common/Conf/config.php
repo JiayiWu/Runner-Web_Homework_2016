@@ -26,6 +26,7 @@ return array(
         'race/result'=>'Home/race/raceResult',
         'race/delete'=>'Home/race/raceDelete',
         'race/join'=>'Home/race/raceJoin',
+        'race/mylist'=>'Home/race/racemyList',
         'race'=>'Home/race/raceList',
 
         'user/acc'=>'index.php/Home/index/index'
