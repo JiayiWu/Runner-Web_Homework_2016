@@ -21,6 +21,12 @@ return array(
         'friends/focus'=>'Home/friends/friendFocus',
         'friends/recommend'=>'Home/friends/recommendFriend',
         'friends'=>'Home/friends/friendList',
+        'race/create'=>'Home/race/raceCreate',
+        'race/modify'=>'Home/race/raceModify',
+        'race/result'=>'Home/race/raceResult',
+        'race/delete'=>'Home/race/raceDelete',
+        'race/join'=>'Home/race/raceJoin',
+        'race'=>'Home/race/raceList',
 
         'user/acc'=>'index.php/Home/index/index'
     )

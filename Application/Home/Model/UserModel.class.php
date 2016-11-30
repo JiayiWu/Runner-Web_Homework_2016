@@ -19,8 +19,10 @@ class UserModel extends Model
     public function add(){
         $User = M('User');
 // 根据表单提交的POST数据创建数据对象
-         $User->create();
-        $result1 =   $User->add();
+        $data = I('post.');
+        $data['score'] = 0;
+
+        $result1 =   $User->data($data)->add();
         if($result1 == true){
             $tem = new MessageInfo(true,null,'登录成功');
             return $tem;

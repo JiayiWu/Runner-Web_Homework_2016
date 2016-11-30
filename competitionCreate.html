@@ -19,6 +19,7 @@
 
 		<link rel="stylesheet" href="assets/css/bootstrap.min.css">
 		<link rel="stylesheet" href="assets/css/init.css">
+		<link rel="stylesheet" href="assets/css/sweetalert.css">
 
 	</head>
 	<body>
@@ -116,7 +117,42 @@
 			<script src="assets/js/util.js"></script>
 			<!--[if lte IE 8]><script src="assets/js/ie/respond.min.js"></script><![endif]-->
 			<script src="assets/js/main.js"></script>
+			<script src="assets/js/sweetalert.min.js"></script>
+
+			<script>
+				$('#create-btn').on('click', function () {
+					var topic = $('#theme').val();
+					var content = $('#content').val();
+
+					if(topic.length ==0 || topic.length>10||content.length==0||content.length>20){
+						swal("OMG", "输入不符合要求!请重新输入:)(不要超过字数哟)", "error");
+						$('#theme').val("");
+						$('#content').val("");
+					}
+
+					jQuery.ajax({
+						url: 'race/create',
+						type: 'post',
+						data: {
+							topic:topic,
+							content: content
+						},
+						cache: false,
+						success: function(data) {
+							if(data.state == true){
+								swal("成功", "比赛创建成功(此窗口2后自动消失)", "success");
+								setTimeout(function () {
+									top.location ='../competitionAll.html';
+								}, 2000);
 
 
+							}else {
+								swal("OMG", "无法创建比赛,请稍后再试!", "error");
+							}
+						}
+					})
+
+				});
+			</script>
 	</body>
 </html>
