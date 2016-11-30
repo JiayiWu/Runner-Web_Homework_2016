@@ -28,6 +28,13 @@ return array(
         'race/join'=>'Home/race/raceJoin',
         'race/mylist'=>'Home/race/racemyList',
         'race'=>'Home/race/raceList',
+        'complaint/create'=>'Home/complaint/complainCreate',
+        'complaint/datele'=>'Home/complaint/complainDelete',
+        'complaint/ignore'=>'Home/complaint/complainIgnore',
+        'complaint/recover'=>'Home/complaint/complainRecover',
+        'complaint/history'=>'Home/complaint/complaintHistory',
+        'complaint'=>'Home/complaint/complainGet',
+
 
         'user/acc'=>'index.php/Home/index/index'
     )

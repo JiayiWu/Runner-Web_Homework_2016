@@ -9,7 +9,39 @@
 namespace Home\Controller;
 
 
-class ComplaintController
-{
+use Think\Controller;
+use Home\Model\ComplaintModel as cm;
 
+class ComplaintController extends Controller
+{
+    public function complainGet(){
+        $cm = new cm();
+        $this->ajaxReturn( $cm->complainGet(),"JSON");
+
+    }
+
+    public function complainCreate(){
+        $cm = new cm();
+        $this->ajaxReturn( $cm->complainCreate(),"JSON");
+    }
+
+    public function complainDelete(){
+        $cm = new cm();
+        $this->ajaxReturn( $cm->complainDelete(),"JSON");
+    }
+
+    public function complaintIgonre(){
+        $cm = new cm();
+        $this->ajaxReturn( $cm->complaintIgonre(),"JSON");
+    }
+
+    public function complaintHistory(){
+        $cm = new cm();
+        $this->ajaxReturn( $cm->complaintHistory(),"JSON");
+    }
+
+    public function complaintRecover(){
+        $cm = new cm();
+        $this->ajaxReturn( $cm->complaintRecover(),"JSON");
+    }
 }

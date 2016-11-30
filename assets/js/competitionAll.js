@@ -34,6 +34,14 @@ function init() {
                         clickEvent($(this).attr('id'));
                     }
                 }
+
+                var imgs = $('.report-img');
+                for (var i = 0; i < imgs.length; ++i) {
+
+                    imgs[i].onclick = function () {
+                        complaintsEvent($(this).attr('id'));
+                    }
+                }
             }
         }
     })
@@ -42,22 +50,55 @@ function init() {
 function insertNode(id,topic,content,name,pointElement) {
     var tem = parseInt(id);
     var pic = tem%4;
+    var imgid = "img"+id;
     if(pic == 0)
         pic = 1;
     var result = "<div class=' col-sm-6  col-md-6 gallery-node '> " +
         "<div class='thumbnail'> <img src='images/cover/com${pic}.png' alt='cover'> " +
         "<div class='caption'> <h3>${topic}</h3> <p style='margin: 10px 0 10px 0 '>${content}</p> <h4>${name}</h4>" +
         " <p><a href='#' class='btn btn-primary button-base' role='button' id='${id}'>参加比赛</a> " +
-        "</p> <img  class='report-img' src='images/report.png'> " +
+        "</p> <img  class='report-img' src='images/report.png' id=${imgid}> " +
         "</div> </div> </div>"
     $.tmpl(result, {
         "id": id,
         name:name,
         pic:pic,
         topic:topic,
-        content:content
+        content:content,
+        imgid:imgid
     }).appendTo(pointElement);
 }
+
+
+function complaintsEvent(id) {
+    var imgid = id.substr(3,id.length);
+    $('#myModal').modal('toggle');
+    $("#myModal").modal().css({
+        "margin-top": function () {
+            return ($(this).height() /5);
+        }
+    });
+    $('#confirmB').on('click', function () {
+        jQuery.ajax({
+            url: 'complaint/create',
+            type:'post',
+            cache: false,
+            data:{
+                id:imgid,
+                reason:$('#select_k1').val()
+            },
+            success: function(data) {
+               if (data.state == true){
+                   swal("投诉成功!", "我们将在三个工作日内答复您的投诉", "success");
+               }else {
+                   swal("未能成功投诉", data.message, "info");
+               }
+            }
+        })
+    });
+
+}
+
 
 function clickEvent(id) {
     jQuery.ajax({
