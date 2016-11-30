@@ -17,6 +17,7 @@
 		<link rel="stylesheet" href="assets/css/bootstrap.min.css">
 		<link rel="stylesheet" href="assets/css/init.css">
 		<link rel="stylesheet" href="assets/css/search.css">
+		<link rel="stylesheet" href="assets/css/sweetalert.css">
 
 	</head>
 	<body>
@@ -69,96 +70,96 @@
 					</div>
 
 					<div class="row search-base" >
-						<p class="tip">查到如下用户</p>
+						<div id="re-local"><p class="tip" >查到如下用户</p></div>
 
-						<div class="col-xs-12 col-sm-12 col-md-5  col-lg-5 list-friend media-list-result" >
-							<ul >
-								<li class="media">
-									<a class="media-left media-middle" href="#">
-										<img src="./others/dp/mht.png" class="img-base" alt="dp">
-									</a>
-									<div class="media-body">
-										<h4 class="media-heading">马化腾</h4>
-										简介:<p>我们坚持做原创</p>
+						<!--<div class="col-xs-12 col-sm-12 col-md-5  col-lg-5 list-friend media-list-result search-media-result" >-->
+							<!--<ul >-->
+								<!--<li class="media">-->
+									<!--<a class="media-left media-middle" href="#">-->
+										<!--<img src="./others/dp/mht.png" class="img-base" alt="dp">-->
+									<!--</a>-->
+									<!--<div class="media-body">-->
+										<!--<h4 class="media-heading">马化腾</h4>-->
+										<!--简介:<p>我们坚持做原创</p>-->
 
-										<button type="button" class="btn btn-success button-base" >关注</button>
-									</div>
-								</li>
-							</ul>
-						</div>
+										<!--<button type="button" class="btn btn-success button-base" >关注</button>-->
+									<!--</div>-->
+								<!--</li>-->
+							<!--</ul>-->
+						<!--</div>-->
 					</div>
 
 					<div class="row search-base" >
-						<p class="tip">为您推荐</p>
+						<div id="re-local2"><p class="tip" >为您推荐</p></div>
 
-						<div class="col-xs-12 col-sm-12 col-md-5  col-lg-5 list-friend media-list-base" >
-							<ul >
-								<li class="media">
-									<a class="media-left media-middle" href="#">
-										<img src="./others/dp/baidulyh.png" class="img-base" alt="dp">
-									</a>
-									<div class="media-body">
-										<h4 class="media-heading">李彦宏</h4>
-										简介:<p>做最好的中文搜索引擎</p>
-
-
-										<button type="button" class="btn btn-success button-base" >关注</button>
-									</div>
-								</li>
-							</ul>
-						</div>
-
-						<div class="col-xs-12 col-sm-12 col-md-5  col-lg-5 list-friend media-list-base" >
-							<ul >
-								<li class="media">
-									<a class="media-left media-middle" href="#">
-										<img src="./others/dp/jackma.png"class="img-base" alt="dp">
-									</a>
-									<div class="media-body">
-										<h4 class="media-heading">马云</h4>
-										简介:<p>实现个小目标</p>
+						<!--<div class="col-xs-12 col-sm-12 col-md-5  col-lg-5 list-friend media-list-base" >-->
+							<!--<ul >-->
+								<!--<li class="media">-->
+									<!--<a class="media-left media-middle" href="#">-->
+										<!--<img src="./others/dp/baidulyh.png" class="img-base" alt="dp">-->
+									<!--</a>-->
+									<!--<div class="media-body">-->
+										<!--<h4 class="media-heading">李彦宏</h4>-->
+										<!--简介:<p>做最好的中文搜索引擎</p>-->
 
 
-										<button type="button" class="btn btn-success button-base" >关注</button>
-									</div>
-								</li>
-							</ul>
-						</div>
+										<!--<button type="button" class="btn btn-success button-base" >关注</button>-->
+									<!--</div>-->
+								<!--</li>-->
+							<!--</ul>-->
+						<!--</div>-->
 
-						<div class="col-xs-12 col-sm-12  col-md-5  col-lg-5 list-friend media-list-base" >
-							<ul >
-								<li class="media">
-									<a class="media-left media-middle" href="#">
-										<img src="./others/dp/lj.png" class="img-base" alt="dp">
-									</a>
-									<div class="media-body">
-										<h4 class="media-heading">雷军</h4>
-										简介:<p>让你们买手机抢抢抢</p>
-
-
-										<button type="button" class="btn btn-success button-base" >关注</button>
-									</div>
-								</li>
-							</ul>
-						</div>
+						<!--<div class="col-xs-12 col-sm-12 col-md-5  col-lg-5 list-friend media-list-base" >-->
+							<!--<ul >-->
+								<!--<li class="media">-->
+									<!--<a class="media-left media-middle" href="#">-->
+										<!--<img src="./others/dp/jackma.png"class="img-base" alt="dp">-->
+									<!--</a>-->
+									<!--<div class="media-body">-->
+										<!--<h4 class="media-heading">马云</h4>-->
+										<!--简介:<p>实现个小目标</p>-->
 
 
+										<!--<button type="button" class="btn btn-success button-base" >关注</button>-->
+									<!--</div>-->
+								<!--</li>-->
+							<!--</ul>-->
+						<!--</div>-->
 
-						<div class="col-xs-12 col-sm-12  col-md-5  col-lg-5 list-friend media-list-base"  >
-							<ul >
-								<li class="media">
-									<a class="media-left media-middle" href="#">
-										<img src="./others/dp/lyh.png" class="img-base" alt="dp">
-									</a>
-									<div class="media-body">
-										<h4 class="media-heading">罗永浩</h4>
-										简介:<p>我们做东半球最好的手机</p>
+						<!--<div class="col-xs-12 col-sm-12  col-md-5  col-lg-5 list-friend media-list-base" >-->
+							<!--<ul >-->
+								<!--<li class="media">-->
+									<!--<a class="media-left media-middle" href="#">-->
+										<!--<img src="./others/dp/lj.png" class="img-base" alt="dp">-->
+									<!--</a>-->
+									<!--<div class="media-body">-->
+										<!--<h4 class="media-heading">雷军</h4>-->
+										<!--简介:<p>让你们买手机抢抢抢</p>-->
 
-										<button type="button" class="btn btn-success button-base" >关注</button>
-									</div>
-								</li>
-							</ul>
-						</div>
+
+										<!--<button type="button" class="btn btn-success button-base" >关注</button>-->
+									<!--</div>-->
+								<!--</li>-->
+							<!--</ul>-->
+						<!--</div>-->
+
+
+
+						<!--<div class="col-xs-12 col-sm-12  col-md-5  col-lg-5 list-friend media-list-base recommender-base"  >-->
+							<!--<ul >-->
+								<!--<li class="media">-->
+									<!--<a class="media-left media-middle" href="#">-->
+										<!--<img src="./others/dp/lyh.png" class="img-base" alt="dp">-->
+									<!--</a>-->
+									<!--<div class="media-body">-->
+										<!--<h4 class="media-heading">罗永浩</h4>-->
+										<!--简介:<p>我们做东半球最好的手机</p>-->
+
+										<!--<button type="button" class="btn btn-success button-base" >关注</button>-->
+									<!--</div>-->
+								<!--</li>-->
+							<!--</ul>-->
+						<!--</div>-->
 					</div>
 
 				</div>
@@ -196,7 +197,97 @@
 			<script src="assets/js/util.js"></script>
 			<!--[if lte IE 8]><script src="assets/js/ie/respond.min.js"></script><![endif]-->
 			<script src="assets/js/main.js"></script>
+		<script src="assets/js/jquery.tmpl.min.js"></script>
+		<script src="assets/js/sweetalert.min.js"></script>
+		<script src="assets/js/friendsJs.js"></script>
+	<script>
 
+		$(function () {
+			$('#search-btn').on('click', function () {
+				search();
+			});
+
+			recommend();
+		});
+		function search() {
+			var searchResult = "	<div class='col-xs-12 col-sm-12 col-md-5  col-lg-5 list-friend media-list-result search-media-result' >" +
+					" <ul > <li class='media'>" +
+					" <a class='media-left media-middle' href='#'>" +
+					" <img src='./others/dp/mht.png' class='img-base' alt='dp'>" +
+					" </a> <div class='media-body'>" +
+					" <h4 class='media-heading'>${name}" + "</h4>简介:<p>${slogan}</p>" +
+					" <button type='button' class='btn ${button_module} button-base search-base-button'id='${id}' lastmodel ='${model}' model='${model}' >${choice}</button>" +
+					" </div> </li> </ul> </div>";
+			var searchName = $('#search').val();
+			jQuery.ajax({
+				url: 'friends/search',
+				type: 'post',
+				cache: false,
+				data:{
+					nickname:searchName
+				},
+				success: function(data) {
+					if(data.state == true){
+						$("div").remove(".search-media-result");
+						var object = data.object;
+						if(object!=null & object.length>0){
+							var pointElement = $("#re-local");
+							for (var i = 0;i<object.length;i++){
+								mainPanelMade(object[i].id,object[i].nickname,object[i].slogan,1,pointElement,searchResult);
+							}
+							var btns = $('.search-base-button');
+							for (var i = 0; i < btns.length; ++i) {
+								$(btns[i]).attr("lastmodel",0);
+								btns[i].onclick = function () {
+									buttonEvent($(this).attr('id'));
+								}
+							}
+						}else{
+							var tem = "<p style='color: white'>未能查找到相关用户</p>";
+							$("#re-local").after(tem);
+//							tem.appendTo(pointElement);
+						}
+					}
+				}
+			})
+		}
+
+		function recommend() {
+			var result ="<div class='col-xs-12 col-sm-12  col-md-5  col-lg-5 list-friend media-list-base recommender-base'  > <ul >" +
+					" <li class='media'> <a class='media-left media-middle' href='#'> " +
+					"<img src='./others/dp/lyh.png' class='img-base' alt='dp'> </a> " +
+					"<div class='media-body'> <h4 class='media-heading'>${name}</h4>简介:<p>${slogan}</p>" +
+					" <button type='button' class='btn ${button_module} button-base recommender-base-button' id='${id}' lastmodel ='${model}' model='${model}'>${choice}</button> " +
+					"</div> </li> </ul> </div>"
+
+			jQuery.ajax({
+				url: 'friends/recommend',
+				type: 'post',
+				cache: false,
+
+				success: function(data) {
+					if(data.state == true){
+						$("div").remove(".recommend-base");
+						var object = data.object;
+						if(object!=null & object.length>0){
+							var pointElement = $("#re-local2")
+							for (var i = 0;i<object.length;i++){
+								mainPanelMade(object[i].id,object[i].nickname,object[i].slogan,1,pointElement,result);
+							}
+							var btns = $('.recommender-base-button');
+							for (var i = 0; i < btns.length; ++i) {
+								$(btns[i]).attr("lastmodel",0);
+								btns[i].onclick = function () {
+									buttonEvent($(this).attr('id'));
+								}
+							}
+						}
+					}
+				}
+			})
+		}
+
+	</script>
 
 	</body>
 </html>

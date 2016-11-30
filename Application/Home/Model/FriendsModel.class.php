@@ -60,6 +60,10 @@ class FriendsModel extends Model
         $friendid = I('post.id');
         $data['ownerid'] = $user['id'];
         $data['friendid'] = $friendid;
+        $tem = $db->where("ownerid=". $user['id']." AND "."friendid=".$friendid)->find();
+        if($tem!=null){
+            return new MessageInfo(false,$tem,"1420:您已经关注过该用户了");
+        }
         $result = $db->data($data)->add();
         if($result == false)
             return new MessageInfo(false,null,"1420:未找到该用户,关注失败");
@@ -78,7 +82,7 @@ class FriendsModel extends Model
     public function friendSearch(){
         $db = M('user');
         $name = I('post.nickname');
-        $result = "\'\%".$name."\%\'";
+        $result = "%".$name."%";
         $map['nickname'] = array('like',$result);
         $findUser = $db->where($map)->select();
         if(count($findUser) >= 0) {

@@ -95,7 +95,10 @@ function buttonEvent(id) {
                         pointElement.html("取消关注");
                     }
                 }else {
-                    swal("OMG", "关注失败,请稍后再试", "error");
+                    if(data.object != null){
+                        swal(":)","您已经关注过该用户啦!","warning");
+                    }else
+                        swal("OMG", "关注失败,请稍后再试", "error");
                 }
             }
         })
