@@ -27,7 +27,7 @@ class DataModel extends Model
                $first = false;
               if(null == $this->findDevice($data)){
                   $store['deviceid'] = $data['deviceid'];
-                  $store['securityid'] = $data['securityid'];
+                  $store['security'] = $data['securityid'];
                   $store['userid'] = $data['userid'];
                    M('device')->data($store)->add();
               }else if ($this->findPropertyMatch($data) == null)
@@ -91,11 +91,11 @@ class DataModel extends Model
 
     private function findDevice($data){
         $Device = M('device');
-        return $Device->where('deviceid="'.$data['deviceid'])->find();
+        return $Device->where('deviceid="'.$data['deviceid'].'"')->find();
     }
 
     private  function  findPropertyMatch($data){
         $Device = M('device');
-        return $Device->where('deviceid="'.$data['deviceid'].'"'.'AND security="'.$data['securityid'].'"'.'AND userid="'.$data['userid'].'"')->find();
+        return $Device->where('deviceid="'.$data['deviceid'].'"'.' AND security="'.$data['securityid'].'"'.'AND userid="'.$data['userid'].'"')->find();
     }
 }
