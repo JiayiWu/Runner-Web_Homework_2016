@@ -23,6 +23,7 @@
 		<link rel="stylesheet" href="assets/css/competitionAll.css">
 		<link rel="stylesheet" href="assets/css/competitionCreate.css">
 		<link rel="stylesheet" href="assets/css/search.css">
+		<link rel="stylesheet" href="assets/css/sweetalert.css">
 	</head>
 	<body>
 		<!--<div id="page-wrapper">-->
@@ -38,23 +39,7 @@
 		</header>
 
 
-		<!--modal -->
-		<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
-			<div class="modal-dialog">
-				<div class="modal-content">
-					<div class="modal-header">
-						<button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
-						<h4 class="modal-title">确定删除(已删除的活动可以再历史记录里面恢复)</h4>
-					</div>
 
-					<div class="modal-footer">
-						<button type="button" class="btn btn-danger" data-dismiss="modal">确定</button>
-						<button type="button" class="btn btn-default" data-dismiss="modal">取消</button>
-
-					</div>
-				</div><!-- /.modal-content -->
-			</div><!-- /.modal-dialog -->
-		</div>
 
 
 
@@ -125,17 +110,35 @@
 			<script src="assets/js/util.js"></script>
 			<!--[if lte IE 8]><script src="assets/js/ie/respond.min.js"></script><![endif]-->
 			<script src="assets/js/main.js"></script>
+		<script src="assets/js/sweetalert.min.js"></script>
+		<script src="assets/js/complainHistoryList.js"></script>
 
 		<script>
-			$('.delete-confirm').on('click', function () {
-				$('#myModal').modal('toggle')
-				$("#myModal").modal().css({
-					"margin-top": function () {
-						return ($(this).height() /5);
-					}
-				});
+
+
+			$('#create-btn').on('click', function () {
+				messageCreate();
 			});
 
+
+			function messageCreate() {
+				var content = $('#content').val();
+				jQuery.ajax({
+					url: 'message/create',
+					type:"post",
+					data:{
+						content:content
+					},
+					cache: false,
+					success: function(data) {
+						if(data.state == true){
+							swal("成功", "消息已推送!", "success");
+							$('#content').val("");
+						}else
+							swal("失败", "消息未能成功推送!", "error");
+					}
+				})
+			}
 
 
 		</script>

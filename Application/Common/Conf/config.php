@@ -8,6 +8,8 @@ return array(
         'user/add'=>'Home/user/userAdd',
         'user/login'=>'Home/user/login',
         'user/basicinfo'=>'Home/user/userBasicInfo',
+        'user/basichome'=>'Home/user/basicInfoHome',
+        'user/message/receive'=>'Home/user/messageReceive',
          'runner/data/sport'=>'Home/viewdata/getSportData',
         'runner/data/body'=>'Home/viewdata/getBodyData',
         'runner/data/sleep'=>'Home/viewdata/getSleepData',
@@ -34,6 +36,8 @@ return array(
         'complaint/recover'=>'Home/complaint/complaintrecover',
         'complaint/history'=>'Home/complaint/complainthistory',
         'complaint'=>'Home/complaint/complainget',
+        'message/create'=>'Home/message/messageCreate',
+        'message'=>'Home/message/messageGet',
 
 
         'user/acc'=>'index.php/Home/index/index'

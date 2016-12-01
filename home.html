@@ -17,6 +17,7 @@
 		<link rel="stylesheet" href="assets/css/bootstrap.min.css">
 		<link rel="stylesheet" href="assets/css/init.css">
 		<link rel="stylesheet" href="assets/css/home.css">
+		<link rel="stylesheet" href="assets/css/sweetalert.css">
 
 	</head>
 	<body>
@@ -50,10 +51,10 @@
 			<div class="col-xs-12 col-sm-12 col-md-3  col-lg-3 " role="userImage" >
 				<div id="userInfo">
 				<img src="images/userPhoto.png" id="userImage">
-				<div>
-					伍佳艺<br/>
-					<p>关注人数:30</p>
-					<p>粉丝:100</p>
+				<div >
+					<p style="font-size: 30px" id="name">伍佳艺</p>
+					<p id="focus">关注人数:30</p>
+					<p id="fans">粉丝:100</p>
 				</div>
 				</div>
 
@@ -68,9 +69,9 @@
 			<div class="col-xs-12 col-sm-12 col-md-offset-1  col-lg-offset-1 col-md-8 col-lg-8" id="recordInfo">
 				<img src="images/record.jpg" id="recordImage">
 				<div id="recordWord">
-					已累计运动<p> 35680 </p>公里<br/>
-					共燃烧了<p> 35680 </p>大卡<br/>
-					累计运动时间<p> 35680 </p>小时
+					已累计运动<p id="runner"> 35680 </p>公里<br/>
+					共燃烧了<p id="cal"> 35680 </p>大卡<br/>
+					累计运动时间<p id="hour"> 35680 </p>小时
 				</div>
 				<div id="motto">
 					运动时刻,点滴改变
@@ -110,6 +111,54 @@
 			<script src="assets/js/util.js"></script>
 			<!--[if lte IE 8]><script src="assets/js/ie/respond.min.js"></script><![endif]-->
 			<script src="assets/js/main.js"></script>
+		<script src="assets/js/sweetalert.min.js"></script>
 
+	<script>
+
+		$(function () {
+			init();
+			message();
+		});
+		function init() {
+			jQuery.ajax({
+				url: 'user/basichome',
+				dataType: 'json',
+				success: function (data) {
+					var img = "images/user/"+data.id+".png";
+
+					$('#name').html(data.name);
+					$('#focus').html("关注人数:"+data.my);
+					$('#fans').html("粉丝:"+data.fans);
+					$('#score').html(data.health);
+					$('#runner').html(data.walkmile);
+					$('#cal').html(data.calorie);
+					$('#hour').html(data.hour);
+					$('#userImage').attr("src",img);
+				}
+			});
+		}
+		function message() {
+			jQuery.ajax({
+				url: 'message',
+				dataType: 'json',
+				success: function (data) {
+					if(data.state == true){
+						var object = data.object;
+						for(var i = 0;i<object.length;i++) {
+							jQuery.ajax({
+								url: 'user/message/receive',
+								dataType: 'json'
+
+							});
+							var content = object[i].content;
+							var date = object[i].date;
+							swal("系统消息", content+"\n"+"通知时间:"+date, "info");
+						}
+					}
+				}
+			});
+		}
+
+	</script>
 	</body>
 </html>
