@@ -6,6 +6,7 @@
 
 $(function () {
     chart.draw();
+    initPercent();
 });
 
 
@@ -170,8 +171,17 @@ var chart = {
             myChart1.resize();
         });
     }
+};
+function initPercent() {
+    jQuery.ajax({
+        url: 'user/sport',
+        cache: false,
+        success: function(data) {
+          $('#pointword').html(data.finish+"%");
+          $('#rankword').html(data.win+"%");
+        }
+    })
 }
-
 
 
 

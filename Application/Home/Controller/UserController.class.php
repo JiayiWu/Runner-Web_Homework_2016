@@ -60,4 +60,11 @@ class UserController extends Controller
         $this->ajaxReturn($um->modifyPassword(),"JSON");
     }
 
+    public function sportinfo(){
+        $um = new um();
+
+
+        $this->ajaxReturn($um->sport_info(),"JSON");
+    }
+
 }

@@ -115,7 +115,14 @@ return $allData;
 
     }
 
-
+    public function sport_info(){
+        $user = session('user');
+        $percentDB = M('percent_record');
+        $result = $percentDB->where("userid=".$user['id'])->find();
+        $data['finish'] = $result['finish'];
+        $data['win'] = $result['win'];
+        return $data;
+    }
 
     public function modifyBasicinfo(){
         $user = session('user');
