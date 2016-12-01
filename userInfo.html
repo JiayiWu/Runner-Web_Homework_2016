@@ -19,6 +19,7 @@
 
 		<link rel="stylesheet" href="assets/css/bootstrap.min.css">
 		<link rel="stylesheet" href="assets/css/init.css">
+		<link rel="stylesheet" href="assets/css/sweetalert.css">
 
 	</head>
 	<body>
@@ -68,26 +69,26 @@
 						<div class=" col-xs-12 col-sm-10  col-md-10  col-lg-10 media-list-base " id="point">
 							<p>基本信息</p>
 							<div class="input-group">
-								<span class="input-group-addon">用户名</span>
-								<input type="text" class="form-control" placeholder="Username">
+								<span class="input-group-addon" >用户名</span>
+								<input type="text" class="form-control" placeholder="Username" id="username">
 							</div>
 
 							<div class="input-group">
-								<span class="input-group-addon">身高</span>
-								<input type="text" class="form-control" placeholder="height">
+								<span class="input-group-addon" >身高</span>
+								<input type="text" class="form-control" placeholder="height" id="height">
 							</div>
 
 							<div class="input-group">
-								<span class="input-group-addon">体重</span>
-								<input type="text" class="form-control" placeholder="weight">
+								<span class="input-group-addon" >体重</span>
+								<input type="text" class="form-control" placeholder="weight" id="weight">
 							</div>
 
 							<div class="input-group">
-								<span class="input-group-addon">身高</span>
+								<span class="input-group-addon">性别</span>
 
-								<input type="radio" name="Gender" checked="checked"> 男
+								<input type="radio" name="Gender" checked="checked" id="check1" value="man"> 男
 
-								<input type="radio" name="Gender"> 女
+								<input type="radio" name="Gender" id="check2" value="woman"> 女
 							</div>
 
 
@@ -141,7 +142,67 @@
 			<script src="assets/js/util.js"></script>
 			<!--[if lte IE 8]><script src="assets/js/ie/respond.min.js"></script><![endif]-->
 			<script src="assets/js/main.js"></script>
+		    <script src="assets/js/sweetalert.min.js"></script>
+			<script>
+				$(function () {
+					init();
 
+					$('#create-btn').on('click', function () {
+						updateEvent();
+					});
+				});
+
+
+				function init() {
+				jQuery.ajax({
+					url: 'user/basicinfo',
+					cache: false,
+					success: function(data) {
+						if(data.state == true){
+							var object = data.object;
+							$('#username').val(object.nickname);
+							$('#height').val(object.height);
+							$('#weight').val(object.weight);
+							if(object.sex != null && object.sex==1){
+								$('#check1').attr("checked",null);
+								$('#check2').attr("checked","checked");
+							}
+							$('#content').val(object.slogan);
+
+						}
+					}
+				})
+			}
+
+			function updateEvent() {
+				var sex = 0;
+				if($('input:radio:checked').val()=='woman'){
+					sex = 1;
+				}
+				jQuery.ajax({
+					url: 'user/update/info',
+					type:"post",
+					data:{
+					nickname:$('#username').val(),
+					height:	$('#height').val(),
+					weight:	$('#weight').val(),
+					sex:sex,
+					slogan:$('#content').val()
+					},
+					cache: false,
+					success: function(data) {
+						if(data.state == true){
+							swal("成功", "您的个人信息修改成功!", "success");
+							init();
+
+						}else {
+							swal("错误", "信息修改失败,请稍后再试!", "error");
+						}
+					}
+				})
+			}
+
+			</script>
 
 
 	</body>

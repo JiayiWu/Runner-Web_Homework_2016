@@ -46,4 +46,18 @@ class UserController extends Controller
         $this->ajaxReturn($um->userMessageReceiver(),"JSON");
     }
 
+    public function modifyBasicinfo(){
+        $um = new um();
+
+
+        $this->ajaxReturn($um->modifyBasicinfo(),"JSON");
+    }
+
+    public function modifyPassword(){
+        $um = new um();
+
+
+        $this->ajaxReturn($um->modifyPassword(),"JSON");
+    }
+
 }

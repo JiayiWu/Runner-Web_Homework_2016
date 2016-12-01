@@ -9,6 +9,8 @@ return array(
         'user/login'=>'Home/user/login',
         'user/basicinfo'=>'Home/user/userBasicInfo',
         'user/basichome'=>'Home/user/basicInfoHome',
+        'user/update/info'=>'Home/user/modifyBasicinfo',
+        'user/update/password'=>'Home/user/modifyPassword',
         'user/message/receive'=>'Home/user/messageReceive',
          'runner/data/sport'=>'Home/viewdata/getSportData',
         'runner/data/body'=>'Home/viewdata/getBodyData',

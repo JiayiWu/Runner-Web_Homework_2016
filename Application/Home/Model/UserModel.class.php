@@ -114,4 +114,32 @@ return $allData;
 //        return new MessageModel(true,$allData,"1260:查询成功");
 
     }
+
+
+
+    public function modifyBasicinfo(){
+        $user = session('user');
+        $data = I("post.");
+        $userDB = M('user');
+
+        if($userDB->where("id=".$user['id'])->save($data)>=1)
+            return new MessageInfo(true,null,"1260:修改成功");
+        return new MessageInfo(false,null,"1220:修改失败");
+
+    }
+
+    public function modifyPassword(){
+        $user = session('user');
+        $userDB = M('user');
+        $tem = $userDB->where("id=".$user['id'])->find();
+        $data = I("post.");
+        if ($data['oldpass'] != $tem['password']){
+            return new MessageInfo(false,null,"1220:原密码不正确,请重新输入");
+        }
+        $temD['password'] = $data['newpass'];
+        $tem = $userDB->where("id=".$user['id'])->save($temD);
+        if($tem>=1)
+            return new MessageInfo(true,null,"1260:修改成功");
+        return new MessageInfo(false,null,"1220:修改失败");
+    }
 }
