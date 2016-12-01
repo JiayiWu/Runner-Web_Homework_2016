@@ -147,6 +147,14 @@
 
 
 		</script>
+		<script>
 
+			function logout() {
+				jQuery.ajax({
+					url: 'user/logout',
+					cache: false
+				})
+			}
+		</script>
 	</body>
 </html>

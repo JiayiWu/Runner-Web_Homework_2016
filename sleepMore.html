@@ -34,11 +34,12 @@
 					</li>
 					<li><a href="competitionAll.html">竞赛</a></li>
 					<li><a href="moments.html">圈子</a></li>
+					<li><a href="market.html">商城</a></li>
 					<li>
 						<a href="#" class="icon fa-angle-down">个人中心</a>
 						<ul>
 							<li style="white-space: nowrap"><a href="userInfo.html">修改信息</a></li>
-							<li style="white-space: nowrap"><a href="index.html">登出</a></li>
+							<li style="white-space: nowrap"><a href="index.html" id="logout" onclick="logout()">登出</a></li>
 
 						</ul>
 					</li>
@@ -91,7 +92,15 @@
 			<!--[if lte IE 8]><script src="assets/js/ie/respond.min.js"></script><![endif]-->
 			<script src="assets/js/main.js"></script>
 			<script  type="text/javascript" src="assets/js/dataSleep.js"></script>
+		<script>
 
+			function logout() {
+				jQuery.ajax({
+					url: 'user/logout',
+					cache: false
+				})
+			}
+		</script>
 
 	</body>
 </html>

@@ -36,11 +36,12 @@
 					</li>
 					<li><a href="competitionAll.html">竞赛</a></li>
 					<li><a href="moments.html">圈子</a></li>
+					<li><a href="market.html">商城</a></li>
 					<li>
 						<a href="#" class="icon fa-angle-down">个人中心</a>
 						<ul>
 							<li style="white-space: nowrap"><a href="userInfo.html">修改信息</a></li>
-							<li style="white-space: nowrap"><a href="index.html">登出</a></li>
+							<li style="white-space: nowrap"><a href="index.html" onclick="logout()">登出</a></li>
 
 						</ul>
 					</li>
@@ -181,18 +182,14 @@
 		<script src="assets/js/jquery.tmpl.min.js"></script>
 			<script src="assets/js/sweetalert.min.js"></script>
 			<script src="assets/js/competitionAll.js"></script>
-		<!--<script>-->
-			<!--$('.report-img').on('click', function () {-->
-				<!--$('#myModal').modal('toggle');-->
-				<!--$("#myModal").modal().css({-->
-					<!--"margin-top": function () {-->
-						<!--return ($(this).height() /5);-->
-					<!--}-->
-				<!--});-->
-			<!--});-->
+		<script>
 
-
-
-		<!--</script>-->
+			function logout() {
+				jQuery.ajax({
+					url: 'user/logout',
+					cache: false
+				})
+			}
+		</script>
 	</body>
 </html>

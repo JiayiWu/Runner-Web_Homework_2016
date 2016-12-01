@@ -7,6 +7,7 @@ return array(
     'URL_ROUTE_RULES'=>array(
         'user/add'=>'Home/user/userAdd',
         'user/login'=>'Home/user/login',
+        'user/logout'=>'Home/user/logout',
         'user/basicinfo'=>'Home/user/userBasicInfo',
         'user/basichome'=>'Home/user/basicInfoHome',
         'user/sport'=>'Home/user/sportinfo',

@@ -3,18 +3,13 @@ namespace Home\Controller;
 use Think\Controller;
 class IndexController extends Controller {
     public function index(){
+        if(session('user')!=null){
+            redirect('/home.html', 0, '');
+        }
         redirect('/index.html', 0, '');
       
     }
 
 
-    public function test(){
-//        echo 'hhh'.'hah';
-        $mc = 'hhh111';
-        $this->ajaxReturn($mc,"JSON");
-    }
-    public function hello($name='thinkphp'){
-        $this->assign('name',$name);
-        $this->display("index");
-    }
+
 }

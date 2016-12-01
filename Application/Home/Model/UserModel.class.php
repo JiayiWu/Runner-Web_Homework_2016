@@ -149,4 +149,8 @@ return $allData;
             return new MessageInfo(true,null,"1260:修改成功");
         return new MessageInfo(false,null,"1220:修改失败");
     }
+
+    public function logout(){
+        session('user',null);
+    }
 }

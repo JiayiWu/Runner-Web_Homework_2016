@@ -25,8 +25,14 @@ class DataModel extends Model
            // first match
            if ($first){
                $first = false;
-              if(null == $this->findPropertyMatch($data))
-                  return new MessageInfo(false,null,'1020:数据验证失败');
+              if(null == $this->findDevice($data)){
+                  $store['deviceid'] = $data['deviceid'];
+                  $store['securityid'] = $data['securityid'];
+                  $store['userid'] = $data['userid'];
+                   M('device')->data($store)->add();
+              }else if ($this->findPropertyMatch($data) == null)
+                  return new MessageInfo(false,null,'1020:Authentication failure');
+
            }
 
            $time = strtotime($data['date']);
@@ -57,11 +63,11 @@ class DataModel extends Model
            $data_sport['userid'] = $data['userid'];
 
            if(!($this->insertSleep_data($data_sleep) && $this->insertBody_data($data_body) && $this->insertSport_data($data_sport)))
-               return new MessageInfo(false,null,'1020:数据格式错误');
+               return new MessageInfo(false,null,'1020:Data error in form');
 
 
        }
-        return new MessageInfo(true,true,'1060:数据注入成功');
+        return new MessageInfo(true,true,'1060:Data synchronization success');
     }
 
 
@@ -81,6 +87,11 @@ class DataModel extends Model
         $sleep_data = M('sport_data');
         return $sleep_data->data($data_sport)->add();
 
+    }
+
+    private function findDevice($data){
+        $Device = M('device');
+        return $Device->where('deviceid="'.$data['deviceid'])->find();
     }
 
     private  function  findPropertyMatch($data){

@@ -67,4 +67,11 @@ class UserController extends Controller
         $this->ajaxReturn($um->sport_info(),"JSON");
     }
 
+    public function logout(){
+        $um = new um();
+
+
+        $this->ajaxReturn($um->logout(),"JSON");
+    }
+
 }
