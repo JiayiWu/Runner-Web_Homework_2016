@@ -118,10 +118,11 @@
 			friendsList();
 		});
 		function friendsList() {
+
 			var result =
 					"<div class='col-xs-12 col-sm-12 col-md-5  col-lg-5 list-friend media-list-base' > " + "<p  style='visibility: hidden'>${id}</p>"+
 					"<ul > <li class='media'> <a class='media-left media-middle' href='#'>" +
-					" <img src='./others/dp/${id}.png' class='img-base' alt='dp'>" +
+					" <img src='./others/dp/${imgid}.png' class='img-base' alt='dp'>" +
 					" </a> <div class='media-body'> <h4 class='media-heading'>${name}</h4>简介:<p>${slogan}</p>" +
 					" <button type='button' class='btn ${button_module} button-base ' id='${id}' lastmodel ='${model}' model='${model}'>${choice}</button><br/> </div> </li> </ul> ";
 			jQuery.ajax({

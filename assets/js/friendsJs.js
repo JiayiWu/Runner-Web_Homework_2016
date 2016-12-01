@@ -7,7 +7,7 @@
 
 
 function mainPanelMade(id,name,slogan,model,pointElement,result) {
-
+    var imgid = id%8;
     var choice ="";
     var button_module = "";
     if (model == 0){
@@ -23,6 +23,7 @@ function mainPanelMade(id,name,slogan,model,pointElement,result) {
 
     $.tmpl(result, {
         "id": id,
+        imgid:imgid,
         name:name,
         choice:choice,
         slogan:slogan,

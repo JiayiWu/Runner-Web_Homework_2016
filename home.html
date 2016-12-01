@@ -125,7 +125,8 @@
 				url: 'user/basichome',
 				dataType: 'json',
 				success: function (data) {
-					var img = "images/user/"+data.id+".png";
+					var imgid = data.id%8;
+					var img = "images/user/"+imgid+".png";
 
 					$('#name').html(data.name);
 					$('#focus').html("关注人数:"+data.my);
