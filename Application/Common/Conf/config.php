@@ -28,12 +28,12 @@ return array(
         'race/join'=>'Home/race/raceJoin',
         'race/mylist'=>'Home/race/racemyList',
         'race'=>'Home/race/raceList',
-        'complaint/create'=>'Home/complaint/complainCreate',
-        'complaint/datele'=>'Home/complaint/complainDelete',
-        'complaint/ignore'=>'Home/complaint/complainIgnore',
-        'complaint/recover'=>'Home/complaint/complainRecover',
-        'complaint/history'=>'Home/complaint/complaintHistory',
-        'complaint'=>'Home/complaint/complainGet',
+        'complaint/create'=>'Home/complaint/complaincreate',
+        'complaint/delete'=>'Home/complaint/complaindelete',
+        'complaint/ignore'=>'Home/complaint/complaintIgonre',
+        'complaint/recover'=>'Home/complaint/complaintrecover',
+        'complaint/history'=>'Home/complaint/complainthistory',
+        'complaint'=>'Home/complaint/complainget',
 
 
         'user/acc'=>'index.php/Home/index/index'

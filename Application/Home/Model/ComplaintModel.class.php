@@ -58,10 +58,11 @@ class ComplaintModel extends Model
         $dbCR = M('complaints_record');
         $dbRC = M('race');
         $id = I('post.id');
-        $raceid = I('post.raceid');
+
+        $raceid = $dbCR->where('id='.$id)->find()['raceid'];
         $date['state'] = 1;
         $dbCR->where('id='.$id)->save($date);
-        $date['state'] = 2;
+        $date['isenable'] = 2;
         $dbRC->where('id='.$raceid)->save($date);
         return new MessageInfo(true,null,"1760:投诉处理成功");
     }
@@ -75,23 +76,29 @@ class ComplaintModel extends Model
     }
 
     public function complaintHistory(){
-        $sql = "select * from complaints_record where state <>0";
+
+        $sql = "select cr.id as id ,cr.raceid as raceid, cr.racetopic as racetopic, cr.racecontent as racecontent,u1.nickname as cname
+         ,u2.nickname as hname,cr.reason as reason, cr.date as date  ,cr.state as state from complaints_record cr,user u1,user u2 where cr.state <> 0 AND cr.curserid = u1.id 
+         AND cr.huserid = u2.id ";
+
         $db = new Model();
         $result = $db->query($sql);
         for($i = 0;$i<count($result);$i++){
             $result[$i]['date']= date('Y-m-d H:i',$result[$i]['date']) ;
-            return new MessageInfo(true,$result,"1760:获取处理列表成功");
+
         }
+        return new MessageInfo(true,$result,"1760:获取处理列表成功");
     }
 
     public function complaintRecover(){
         $dbCR = M('complaints_record');
         $dbRC = M('race');
         $id = I('post.id');
-        $raceid = I('post.raceid');
+//        $id = 1;
+        $raceid = $dbCR->where('id='.$id)->find()['raceid'];
         $date['state'] = 2;
         $dbCR->where('id='.$id)->save($date);
-        $date['state'] = 0;
+        $date['isenable'] = 0;
         $dbRC->where('id='.$raceid)->save($date);
         return new MessageInfo(true,null,"1760:恢复成功");
     }

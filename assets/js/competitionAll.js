@@ -60,7 +60,7 @@ function insertNode(id,topic,content,name,pointElement) {
         "</p> <img  class='report-img' src='images/report.png' id=${imgid}> " +
         "</div> </div> </div>"
     $.tmpl(result, {
-        "id": id,
+        id: id,
         name:name,
         pic:pic,
         topic:topic,

@@ -20,6 +20,7 @@
 		<link rel="stylesheet" href="assets/css/init.css">
 		<link rel="stylesheet" href="assets/css/competitionAll.css">
 		<link rel="stylesheet" href="assets/css/adminComplain.css">
+		<link rel="stylesheet" href="assets/css/sweetalert.css">
 	</head>
 	<body>
 		<!--<div id="page-wrapper">-->
@@ -35,23 +36,7 @@
 		</header>
 
 
-		<!--modal -->
-		<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
-			<div class="modal-dialog">
-				<div class="modal-content">
-					<div class="modal-header">
-						<button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
-						<h4 class="modal-title">确定要恢复已删除的活动吗</h4>
-					</div>
 
-					<div class="modal-footer">
-						<button type="button" class="btn btn-danger" data-dismiss="modal">确定</button>
-						<button type="button" class="btn btn-default" data-dismiss="modal">取消</button>
-
-					</div>
-				</div><!-- /.modal-content -->
-			</div><!-- /.modal-dialog -->
-		</div>
 
 
 
@@ -66,7 +51,7 @@
 					</ul>
 
 
-					<div class="row">
+					<div class="row" id="re-local">
 
 						<div class=" col-sm-6   col-md-6 gallery-node   ">
 							<div class="thumbnail">
@@ -138,7 +123,7 @@
 						</div>
 
 
-					<div class="col-xs-10 col-sm-10 col-md-10  col-lg-10 col-xs-offset-1  col-sm-offset-1 col-md-offset-1  col-lg-offset-1  media-list-base" id="loading">正在加载中,请稍后</div>
+					<!--<div class="col-xs-10 col-sm-10 col-md-10  col-lg-10 col-xs-offset-1  col-sm-offset-1 col-md-offset-1  col-lg-offset-1  media-list-base" id="loading">正在加载中,请稍后</div>-->
 
 
 				</div>
@@ -181,25 +166,10 @@
 			<script src="assets/js/util.js"></script>
 			<!--[if lte IE 8]><script src="assets/js/ie/respond.min.js"></script><![endif]-->
 			<script src="assets/js/main.js"></script>
-
-		<script>
-			$('.delete-confirm').on('click', function () {
-				$('#myModal').modal('toggle')
-
+		<script src="assets/js/jquery.tmpl.min.js"></script>
+		<script src="assets/js/sweetalert.min.js"></script>
+		<script src="assets/js/complainHistoryList.js"></script>
 
 
-				$("#myModal").modal().css({
-
-					"top": function () {
-						return ($(this).height() /5);
-
-
-					}
-				});
-			});
-
-
-
-		</script>
 	</body>
 </html>

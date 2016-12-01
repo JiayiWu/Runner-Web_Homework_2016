@@ -79,7 +79,7 @@ class RaceModel extends Model
             foreach ($dataOwner as $tem)
                 $dataOwnerCount+=$tem['walkmile'];
         }else if($dataJoin != null){
-            foreach ($dataJoinCount as $tem)
+            foreach ($dataJoin as $tem)
                 $dataJoinCount+=$tem['walkmile'];
         }
 
