@@ -35,7 +35,7 @@ return array(
         'race/mylist'=>'Home/race/racemyList',
         'race'=>'Home/race/raceList',
         'complaint/create'=>'Home/complaint/complaincreate',
-        'complaint/delete'=>'Home/complaint/complaindelete',
+        'complaint/delete'=>'Home/complaint/complainDelete',
         'complaint/ignore'=>'Home/complaint/complaintIgonre',
         'complaint/recover'=>'Home/complaint/complaintrecover',
         'complaint/history'=>'Home/complaint/complainthistory',

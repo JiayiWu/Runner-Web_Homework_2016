@@ -4,6 +4,7 @@
 
 $(function () {
     init();
+    eventID();
 });
 
 
@@ -86,7 +87,7 @@ function deleteEvent(id) {
         confirmButtonColor: "#ec6c62"
     }, function() {
         $.ajax({
-            url: "complaint/datele",
+            url: "complaint/delete",
             type: "post",
             data:{
                 id:deleteid
@@ -103,7 +104,17 @@ function deleteEvent(id) {
         });
     });
 }
-
+function  eventID() {
+    function f1(){
+        deleteNum=999;
+        function f2(){
+           return deleteNum++;
+        }
+        return f2;
+    }
+    var result=f1();
+  return  result();
+}
 function ignoreEvent(id) {
     var ignoreid = id.substr(2,id.length);
     swal({
