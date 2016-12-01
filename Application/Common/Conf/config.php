@@ -41,6 +41,8 @@ return array(
         'complaint'=>'Home/complaint/complainget',
         'message/create'=>'Home/message/messageCreate',
         'message'=>'Home/message/messageGet',
+        'market/buy'=>'Home/market/buy',
+        'market/score'=>'Home/market/userScore',
 
 
         'user/acc'=>'index.php/Home/index/index'
